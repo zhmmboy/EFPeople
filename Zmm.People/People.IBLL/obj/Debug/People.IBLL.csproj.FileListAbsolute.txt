@@ -1,0 +1,7 @@
+E:\MySpace\Zmm.People\People.IBLL\bin\Debug\People.IBLL.dll
+E:\MySpace\Zmm.People\People.IBLL\bin\Debug\People.IBLL.pdb
+E:\MySpace\Zmm.People\People.IBLL\bin\Debug\People.Models.dll
+E:\MySpace\Zmm.People\People.IBLL\bin\Debug\People.Models.pdb
+E:\MySpace\Zmm.People\People.IBLL\obj\Debug\People.IBLL.csprojResolveAssemblyReference.cache
+E:\MySpace\Zmm.People\People.IBLL\obj\Debug\People.IBLL.dll
+E:\MySpace\Zmm.People\People.IBLL\obj\Debug\People.IBLL.pdb

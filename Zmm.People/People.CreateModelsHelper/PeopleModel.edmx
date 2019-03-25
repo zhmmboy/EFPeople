@@ -1,0 +1,1145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PeopleDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="P_Activity">
+          <Key>
+            <PropertyRef Name="aId" />
+          </Key>
+          <Property Name="aId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="aTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="aPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="aContent" Type="ntext" />
+          <Property Name="aDatetime" Type="datetime" />
+          <Property Name="personId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="P_Album">
+          <Key>
+            <PropertyRef Name="aId" />
+          </Key>
+          <Property Name="aId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="aName" Type="nvarchar" MaxLength="50" />
+          <Property Name="aPhoto" Type="varchar" MaxLength="50" />
+          <Property Name="aIntro" Type="nvarchar" MaxLength="500" />
+          <Property Name="personId" Type="nvarchar" MaxLength="50" />
+          <Property Name="aAddTime" Type="datetime" />
+          <Property Name="aClicks" Type="int" />
+        </EntityType>
+        <EntityType Name="P_AlbumInfo">
+          <Key>
+            <PropertyRef Name="aiId" />
+          </Key>
+          <Property Name="aiId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="aiUrl" Type="nvarchar" MaxLength="50" />
+          <Property Name="aiDesc" Type="nvarchar" MaxLength="50" />
+          <Property Name="albumId" Type="uniqueidentifier" />
+          <Property Name="aiAddTime" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="P_Answer">
+          <Key>
+            <PropertyRef Name="aId" />
+          </Key>
+          <Property Name="aId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="aAddTime" Type="datetime" />
+          <Property Name="aContent" Type="nvarchar" MaxLength="500" />
+          <Property Name="qId" Type="uniqueidentifier" />
+          <Property Name="aGood" Type="int" />
+          <Property Name="aBad" Type="int" />
+        </EntityType>
+        <EntityType Name="P_Class">
+          <Key>
+            <PropertyRef Name="cId" />
+          </Key>
+          <Property Name="cId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="cName" Type="nvarchar" MaxLength="50" />
+          <Property Name="cEnName" Type="varchar" MaxLength="50" />
+          <Property Name="cParentId" Type="nvarchar" MaxLength="50" />
+          <Property Name="cOrder" Type="int" />
+          <Property Name="cLevel" Type="int" />
+        </EntityType>
+        <EntityType Name="P_News">
+          <Key>
+            <PropertyRef Name="nId" />
+          </Key>
+          <Property Name="nId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="nForm" Type="nvarchar" MaxLength="50" />
+          <Property Name="nFormurl" Type="nvarchar" MaxLength="500" />
+          <Property Name="nAuthor" Type="nvarchar" MaxLength="30" />
+          <Property Name="uId" Type="uniqueidentifier" />
+          <Property Name="nTime" Type="smalldatetime" />
+          <Property Name="nTalks" Type="int" />
+          <Property Name="nClicks" Type="int" />
+          <Property Name="nTitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="nTitlepic" Type="nvarchar" MaxLength="200" />
+          <Property Name="nTips" Type="nvarchar" MaxLength="500" />
+          <Property Name="nContent" Type="ntext" />
+          <Property Name="nTags" Type="nvarchar" MaxLength="100" />
+          <Property Name="nLinkurl" Type="nvarchar" MaxLength="100" />
+          <Property Name="nIsPage" Type="bit" />
+          <Property Name="nClass1" Type="uniqueidentifier" />
+          <Property Name="nClass2" Type="smallint" />
+          <Property Name="nStatus" Type="smallint" />
+          <Property Name="nLevel" Type="tinyint" />
+          <Property Name="nIsRecommand" Type="bit" />
+          <Property Name="nIsDel" Type="bit" />
+          <Property Name="personId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="P_Person">
+          <Key>
+            <PropertyRef Name="pId" />
+          </Key>
+          <Property Name="pId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pCnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pEnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pPenName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pSex" Type="bit" />
+          <Property Name="pJob" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNationality" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNation" Type="nvarchar" MaxLength="50" />
+          <Property Name="pBirthday" Type="datetime" />
+          <Property Name="pZodiac" Type="nvarchar" MaxLength="50" />
+          <Property Name="pHeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="pWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="pBWH" Type="nvarchar" MaxLength="50" />
+          <Property Name="pUniversity" Type="nvarchar" MaxLength="50" />
+          <Property Name="pHomeProvince" Type="nvarchar" MaxLength="50" />
+          <Property Name="pHomeCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="pHomeArea" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNowProvice" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNowCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNowArea" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNowPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="pBloodType" Type="nvarchar" MaxLength="50" />
+          <Property Name="pPhoto" Type="nvarchar" MaxLength="50" />
+          <Property Name="pSpeak" Type="nvarchar" MaxLength="50" />
+          <Property Name="pSinaBlog" Type="nvarchar" MaxLength="500" />
+          <Property Name="pTencentBlog" Type="nvarchar" MaxLength="500" />
+          <Property Name="pHomePage" Type="nvarchar" MaxLength="50" />
+          <Property Name="pTips" Type="nvarchar" MaxLength="500" />
+          <Property Name="pIntroduce" Type="ntext" />
+          <Property Name="ClassId" Type="nvarchar" MaxLength="50" />
+          <Property Name="pClicks" Type="int" />
+          <Property Name="pAddTime" Type="datetime" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“PeopleDB.dbo.P_PersonMappingClass”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="P_PersonMappingClass">
+          <Property Name="personId" Type="uniqueidentifier" />
+          <Property Name="classId" Type="uniqueidentifier" />
+        </EntityType>-->
+        <EntityType Name="P_Photo">
+          <Key>
+            <PropertyRef Name="pId" />
+          </Key>
+          <Property Name="pId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pUrl" Type="varchar" MaxLength="200" />
+          <Property Name="pDesc" Type="nvarchar" MaxLength="50" />
+          <Property Name="pAddTime" Type="datetime" />
+          <Property Name="AlbumId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="P_Question">
+          <Key>
+            <PropertyRef Name="qId" />
+          </Key>
+          <Property Name="qId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="qTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="qAsker" Type="nvarchar" MaxLength="50" />
+          <Property Name="qAddTime" Type="datetime" />
+          <Property Name="personId" Type="uniqueidentifier" />
+          <Property Name="qClicks" Type="int" />
+        </EntityType>
+        <EntityType Name="P_Tags">
+          <Key>
+            <PropertyRef Name="tId" />
+          </Key>
+          <Property Name="tId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="tName" Type="nvarchar" MaxLength="50" />
+          <Property Name="tAddTime" Type="datetime" />
+          <Property Name="tIsValid" Type="bit" />
+          <Property Name="tClicks" Type="int" />
+          <Property Name="classId" Type="uniqueidentifier" />
+          <Property Name="newsId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="P_User">
+          <Key>
+            <PropertyRef Name="uId" />
+          </Key>
+          <Property Name="uId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="uName" Type="nvarchar" MaxLength="50" />
+          <Property Name="uPwd" Type="varchar" MaxLength="50" />
+          <Property Name="uPhoto" Type="nchar" MaxLength="10" />
+          <Property Name="uAge" Type="int" />
+          <Property Name="uSex" Type="bit" />
+          <Property Name="uMobile" Type="char" MaxLength="11" />
+          <Property Name="uPhone" Type="varchar" MaxLength="20" />
+          <Property Name="uProvince" Type="nvarchar" MaxLength="30" />
+          <Property Name="uCity" Type="nvarchar" MaxLength="30" />
+          <Property Name="uZipCode" Type="varchar" MaxLength="6" />
+          <Property Name="uAddr" Type="nvarchar" MaxLength="50" />
+          <Property Name="uLoginTime" Type="datetime" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“PeopleDB.dbo.V_GetAlbumList”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="V_GetAlbumList">
+          <Key>
+            <PropertyRef Name="aId" />
+            <PropertyRef Name="cId" />
+          </Key>
+          <Property Name="aId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="aName" Type="nvarchar" MaxLength="50" />
+          <Property Name="aPhoto" Type="varchar" MaxLength="50" />
+          <Property Name="aIntro" Type="nvarchar" MaxLength="500" />
+          <Property Name="personId" Type="nvarchar" MaxLength="50" />
+          <Property Name="aAddTime" Type="datetime" />
+          <Property Name="aClicks" Type="int" />
+          <Property Name="cName" Type="nvarchar" MaxLength="50" />
+          <Property Name="cEnName" Type="varchar" MaxLength="50" />
+          <Property Name="cId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pCnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pPenName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pEnName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“PeopleDB.dbo.v_GetNews”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="v_GetNews">
+          <Key>
+            <PropertyRef Name="nId" />
+            <PropertyRef Name="nTitle" />
+          </Key>
+          <Property Name="nId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="nForm" Type="nvarchar" MaxLength="50" />
+          <Property Name="nFormurl" Type="nvarchar" MaxLength="500" />
+          <Property Name="uId" Type="uniqueidentifier" />
+          <Property Name="nAuthor" Type="nvarchar" MaxLength="30" />
+          <Property Name="nTime" Type="smalldatetime" />
+          <Property Name="nTalks" Type="int" />
+          <Property Name="nClicks" Type="int" />
+          <Property Name="nTitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="nTitlepic" Type="nvarchar" MaxLength="200" />
+          <Property Name="nTips" Type="nvarchar" MaxLength="500" />
+          <Property Name="nContent" Type="ntext" />
+          <Property Name="nTags" Type="nvarchar" MaxLength="100" />
+          <Property Name="nLinkurl" Type="nvarchar" MaxLength="100" />
+          <Property Name="nIsPage" Type="bit" />
+          <Property Name="nClass2" Type="smallint" />
+          <Property Name="nStatus" Type="smallint" />
+          <Property Name="nLevel" Type="tinyint" />
+          <Property Name="nIsRecommand" Type="bit" />
+          <Property Name="nIsDel" Type="bit" />
+          <Property Name="cName" Type="nvarchar" MaxLength="50" />
+          <Property Name="cEnName" Type="varchar" MaxLength="50" />
+          <Property Name="nClass1" Type="uniqueidentifier" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“PeopleDB.dbo.v_GetPersonList”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="v_GetPersonList">
+          <Key>
+            <PropertyRef Name="pId" />
+            <PropertyRef Name="cId" />
+          </Key>
+          <Property Name="pId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pCnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pEnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pPenName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pSex" Type="bit" />
+          <Property Name="pJob" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNation" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClassId" Type="nvarchar" MaxLength="50" />
+          <Property Name="pAddTime" Type="datetime" />
+          <Property Name="cName" Type="nvarchar" MaxLength="50" />
+          <Property Name="cEnName" Type="varchar" MaxLength="50" />
+          <Property Name="cOrder" Type="int" />
+          <Property Name="pTips" Type="nvarchar" MaxLength="500" />
+          <Property Name="pPhoto" Type="nvarchar" MaxLength="50" />
+          <Property Name="pClicks" Type="int" />
+          <Property Name="pNationality" Type="nvarchar" MaxLength="50" />
+          <Property Name="pBirthday" Type="datetime" />
+          <Property Name="pHeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="pWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="pBWH" Type="nvarchar" MaxLength="50" />
+          <Property Name="pUniversity" Type="nvarchar" MaxLength="50" />
+          <Property Name="pHomeProvince" Type="nvarchar" MaxLength="50" />
+          <Property Name="pHomeCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="cId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="cParentId" Type="nvarchar" MaxLength="50" />
+          <Property Name="cLevel" Type="int" />
+          <Property Name="pHomeArea" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNowProvice" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNowCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNowArea" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNowPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="pBloodType" Type="nvarchar" MaxLength="50" />
+          <Property Name="pSpeak" Type="nvarchar" MaxLength="50" />
+          <Property Name="pSinaBlog" Type="nvarchar" MaxLength="500" />
+          <Property Name="pTencentBlog" Type="nvarchar" MaxLength="500" />
+          <Property Name="pHomePage" Type="nvarchar" MaxLength="50" />
+          <Property Name="pIntroduce" Type="ntext" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“PeopleDB.dbo.V_GetQuestionList”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="V_GetQuestionList">
+          <Key>
+            <PropertyRef Name="qId" />
+          </Key>
+          <Property Name="qId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="qTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="qAsker" Type="nvarchar" MaxLength="50" />
+          <Property Name="qAddTime" Type="datetime" />
+          <Property Name="personId" Type="uniqueidentifier" />
+          <Property Name="qClicks" Type="int" />
+          <Property Name="pCnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pEnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="cName" Type="nvarchar" MaxLength="50" />
+          <Property Name="cEnName" Type="varchar" MaxLength="50" />
+          <Property Name="pSex" Type="bit" />
+          <Property Name="pJob" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNationality" Type="nvarchar" MaxLength="50" />
+          <Property Name="pNation" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="GetLSH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="num" Type="int" Mode="In" />
+          <Parameter Name="len" Type="int" Mode="In" />
+        </Function>
+        <Function Name="P_AddNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nform" Type="nvarchar" Mode="In" />
+          <Parameter Name="nformurl" Type="nvarchar" Mode="In" />
+          <Parameter Name="nauthor" Type="nvarchar" Mode="In" />
+          <Parameter Name="ntitle" Type="nvarchar" Mode="In" />
+          <Parameter Name="ntitlepic" Type="nvarchar" Mode="In" />
+          <Parameter Name="ntips" Type="nvarchar" Mode="In" />
+          <Parameter Name="ncontent" Type="ntext" Mode="In" />
+          <Parameter Name="ntags" Type="nvarchar" Mode="In" />
+          <Parameter Name="nispage" Type="bit" Mode="In" />
+          <Parameter Name="nclass1" Type="int" Mode="In" />
+          <Parameter Name="nclass2" Type="int" Mode="In" />
+          <Parameter Name="nlevel" Type="tinyint" Mode="In" />
+          <Parameter Name="nId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="personId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="P_EditNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nform" Type="char" Mode="In" />
+          <Parameter Name="nauthor" Type="char" Mode="In" />
+          <Parameter Name="ntitle" Type="nvarchar" Mode="In" />
+          <Parameter Name="ntitlepic" Type="nvarchar" Mode="In" />
+          <Parameter Name="ntips" Type="nvarchar" Mode="In" />
+          <Parameter Name="ncontent" Type="ntext" Mode="In" />
+          <Parameter Name="ntags" Type="nvarchar" Mode="In" />
+          <Parameter Name="nlinkurl" Type="nvarchar" Mode="In" />
+          <Parameter Name="nispage" Type="bit" Mode="In" />
+          <Parameter Name="nclass1" Type="int" Mode="In" />
+          <Parameter Name="nclass2" Type="int" Mode="In" />
+          <Parameter Name="nstatus" Type="int" Mode="In" />
+          <Parameter Name="nlevel" Type="tinyint" Mode="In" />
+          <Parameter Name="nid" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="P_Paging" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Tables" Type="varchar" Mode="In" />
+          <Parameter Name="PrimaryKey" Type="varchar" Mode="In" />
+          <Parameter Name="CurrentPage" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="Filter" Type="varchar" Mode="In" />
+          <Parameter Name="Fields" Type="varchar" Mode="In" />
+          <Parameter Name="Sort" Type="varchar" Mode="In" />
+          <Parameter Name="Group" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="P_QueryBySql" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tablename" Type="nvarchar" Mode="In" />
+          <Parameter Name="fields" Type="nvarchar" Mode="In" />
+          <Parameter Name="condition" Type="nvarchar" Mode="In" />
+          <Parameter Name="toprows" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="PeopleDBModelStoreContainer">
+          <EntitySet Name="P_Activity" EntityType="Self.P_Activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Album" EntityType="Self.P_Album" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_AlbumInfo" EntityType="Self.P_AlbumInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Answer" EntityType="Self.P_Answer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Class" EntityType="Self.P_Class" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_News" EntityType="Self.P_News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Person" EntityType="Self.P_Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Photo" EntityType="Self.P_Photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Question" EntityType="Self.P_Question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_Tags" EntityType="Self.P_Tags" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="P_User" EntityType="Self.P_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_GetAlbumList" EntityType="Self.V_GetAlbumList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_GetAlbumList].[aId] AS [aId], 
+    [V_GetAlbumList].[aName] AS [aName], 
+    [V_GetAlbumList].[aPhoto] AS [aPhoto], 
+    [V_GetAlbumList].[aIntro] AS [aIntro], 
+    [V_GetAlbumList].[personId] AS [personId], 
+    [V_GetAlbumList].[aAddTime] AS [aAddTime], 
+    [V_GetAlbumList].[aClicks] AS [aClicks], 
+    [V_GetAlbumList].[cName] AS [cName], 
+    [V_GetAlbumList].[cEnName] AS [cEnName], 
+    [V_GetAlbumList].[cId] AS [cId], 
+    [V_GetAlbumList].[pCnName] AS [pCnName], 
+    [V_GetAlbumList].[pPenName] AS [pPenName], 
+    [V_GetAlbumList].[pEnName] AS [pEnName]
+    FROM [dbo].[V_GetAlbumList] AS [V_GetAlbumList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_GetNews" EntityType="Self.v_GetNews" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_GetNews].[nId] AS [nId], 
+    [v_GetNews].[nForm] AS [nForm], 
+    [v_GetNews].[nFormurl] AS [nFormurl], 
+    [v_GetNews].[uId] AS [uId], 
+    [v_GetNews].[nAuthor] AS [nAuthor], 
+    [v_GetNews].[nTime] AS [nTime], 
+    [v_GetNews].[nTalks] AS [nTalks], 
+    [v_GetNews].[nClicks] AS [nClicks], 
+    [v_GetNews].[nTitle] AS [nTitle], 
+    [v_GetNews].[nTitlepic] AS [nTitlepic], 
+    [v_GetNews].[nTips] AS [nTips], 
+    [v_GetNews].[nContent] AS [nContent], 
+    [v_GetNews].[nTags] AS [nTags], 
+    [v_GetNews].[nLinkurl] AS [nLinkurl], 
+    [v_GetNews].[nIsPage] AS [nIsPage], 
+    [v_GetNews].[nClass2] AS [nClass2], 
+    [v_GetNews].[nStatus] AS [nStatus], 
+    [v_GetNews].[nLevel] AS [nLevel], 
+    [v_GetNews].[nIsRecommand] AS [nIsRecommand], 
+    [v_GetNews].[nIsDel] AS [nIsDel], 
+    [v_GetNews].[cName] AS [cName], 
+    [v_GetNews].[cEnName] AS [cEnName], 
+    [v_GetNews].[nClass1] AS [nClass1]
+    FROM [dbo].[v_GetNews] AS [v_GetNews]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_GetPersonList" EntityType="Self.v_GetPersonList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_GetPersonList].[pId] AS [pId], 
+    [v_GetPersonList].[pCnName] AS [pCnName], 
+    [v_GetPersonList].[pEnName] AS [pEnName], 
+    [v_GetPersonList].[pPenName] AS [pPenName], 
+    [v_GetPersonList].[pSex] AS [pSex], 
+    [v_GetPersonList].[pJob] AS [pJob], 
+    [v_GetPersonList].[pNation] AS [pNation], 
+    [v_GetPersonList].[ClassId] AS [ClassId], 
+    [v_GetPersonList].[pAddTime] AS [pAddTime], 
+    [v_GetPersonList].[cName] AS [cName], 
+    [v_GetPersonList].[cEnName] AS [cEnName], 
+    [v_GetPersonList].[cOrder] AS [cOrder], 
+    [v_GetPersonList].[pTips] AS [pTips], 
+    [v_GetPersonList].[pPhoto] AS [pPhoto], 
+    [v_GetPersonList].[pClicks] AS [pClicks], 
+    [v_GetPersonList].[pNationality] AS [pNationality], 
+    [v_GetPersonList].[pBirthday] AS [pBirthday], 
+    [v_GetPersonList].[pHeight] AS [pHeight], 
+    [v_GetPersonList].[pWeight] AS [pWeight], 
+    [v_GetPersonList].[pBWH] AS [pBWH], 
+    [v_GetPersonList].[pUniversity] AS [pUniversity], 
+    [v_GetPersonList].[pHomeProvince] AS [pHomeProvince], 
+    [v_GetPersonList].[pHomeCity] AS [pHomeCity], 
+    [v_GetPersonList].[cId] AS [cId], 
+    [v_GetPersonList].[cParentId] AS [cParentId], 
+    [v_GetPersonList].[cLevel] AS [cLevel], 
+    [v_GetPersonList].[pHomeArea] AS [pHomeArea], 
+    [v_GetPersonList].[pNowProvice] AS [pNowProvice], 
+    [v_GetPersonList].[pNowCity] AS [pNowCity], 
+    [v_GetPersonList].[pNowArea] AS [pNowArea], 
+    [v_GetPersonList].[pNowPlace] AS [pNowPlace], 
+    [v_GetPersonList].[pBloodType] AS [pBloodType], 
+    [v_GetPersonList].[pSpeak] AS [pSpeak], 
+    [v_GetPersonList].[pSinaBlog] AS [pSinaBlog], 
+    [v_GetPersonList].[pTencentBlog] AS [pTencentBlog], 
+    [v_GetPersonList].[pHomePage] AS [pHomePage], 
+    [v_GetPersonList].[pIntroduce] AS [pIntroduce]
+    FROM [dbo].[v_GetPersonList] AS [v_GetPersonList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_GetQuestionList" EntityType="Self.V_GetQuestionList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_GetQuestionList].[qId] AS [qId], 
+    [V_GetQuestionList].[qTitle] AS [qTitle], 
+    [V_GetQuestionList].[qAsker] AS [qAsker], 
+    [V_GetQuestionList].[qAddTime] AS [qAddTime], 
+    [V_GetQuestionList].[personId] AS [personId], 
+    [V_GetQuestionList].[qClicks] AS [qClicks], 
+    [V_GetQuestionList].[pCnName] AS [pCnName], 
+    [V_GetQuestionList].[pEnName] AS [pEnName], 
+    [V_GetQuestionList].[cName] AS [cName], 
+    [V_GetQuestionList].[cEnName] AS [cEnName], 
+    [V_GetQuestionList].[pSex] AS [pSex], 
+    [V_GetQuestionList].[pJob] AS [pJob], 
+    [V_GetQuestionList].[pNationality] AS [pNationality], 
+    [V_GetQuestionList].[pNation] AS [pNation]
+    FROM [dbo].[V_GetQuestionList] AS [V_GetQuestionList]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PeopleDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="P_Activity">
+          <Key>
+            <PropertyRef Name="aId" />
+          </Key>
+          <Property Name="aId" Type="Guid" Nullable="false" />
+          <Property Name="aTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="aDatetime" Type="DateTime" Precision="3" />
+          <Property Name="personId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="P_Album">
+          <Key>
+            <PropertyRef Name="aId" />
+          </Key>
+          <Property Name="aId" Type="Guid" Nullable="false" />
+          <Property Name="aName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aIntro" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="personId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aAddTime" Type="DateTime" Precision="3" />
+          <Property Name="aClicks" Type="Int32" />
+        </EntityType>
+        <EntityType Name="P_AlbumInfo">
+          <Key>
+            <PropertyRef Name="aiId" />
+          </Key>
+          <Property Name="aiId" Type="Guid" Nullable="false" />
+          <Property Name="aiUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aiDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="albumId" Type="Guid" />
+          <Property Name="aiAddTime" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="P_Answer">
+          <Key>
+            <PropertyRef Name="aId" />
+          </Key>
+          <Property Name="aId" Type="Guid" Nullable="false" />
+          <Property Name="aAddTime" Type="DateTime" Precision="3" />
+          <Property Name="aContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="qId" Type="Guid" />
+          <Property Name="aGood" Type="Int32" />
+          <Property Name="aBad" Type="Int32" />
+        </EntityType>
+        <EntityType Name="P_Class">
+          <Key>
+            <PropertyRef Name="cId" />
+          </Key>
+          <Property Name="cId" Type="Guid" Nullable="false" />
+          <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cParentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cOrder" Type="Int32" />
+          <Property Name="cLevel" Type="Int32" />
+        </EntityType>
+        <EntityType Name="P_News">
+          <Key>
+            <PropertyRef Name="nId" />
+          </Key>
+          <Property Name="nId" Type="Guid" Nullable="false" />
+          <Property Name="nForm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nFormurl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="nAuthor" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="uId" Type="Guid" />
+          <Property Name="nTime" Type="DateTime" Precision="0" />
+          <Property Name="nTalks" Type="Int32" />
+          <Property Name="nClicks" Type="Int32" />
+          <Property Name="nTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nTitlepic" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="nTips" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="nContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="nTags" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nLinkurl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nIsPage" Type="Boolean" />
+          <Property Name="nClass1" Type="Guid" />
+          <Property Name="nClass2" Type="Int16" />
+          <Property Name="nStatus" Type="Int16" />
+          <Property Name="nLevel" Type="Byte" />
+          <Property Name="nIsRecommand" Type="Boolean" />
+          <Property Name="nIsDel" Type="Boolean" />
+          <Property Name="personId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="P_Person">
+          <Key>
+            <PropertyRef Name="pId" />
+          </Key>
+          <Property Name="pId" Type="Guid" Nullable="false" />
+          <Property Name="pCnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pPenName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pSex" Type="Boolean" />
+          <Property Name="pJob" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pBirthday" Type="DateTime" Precision="3" />
+          <Property Name="pZodiac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pHeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="pWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="pBWH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pUniversity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pHomeProvince" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pHomeCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pHomeArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNowProvice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNowCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNowArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNowPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pBloodType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pSpeak" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pSinaBlog" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="pTencentBlog" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="pHomePage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pTips" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="pIntroduce" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClassId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pClicks" Type="Int32" />
+          <Property Name="pAddTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="P_Photo">
+          <Key>
+            <PropertyRef Name="pId" />
+          </Key>
+          <Property Name="pId" Type="Guid" Nullable="false" />
+          <Property Name="pUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="pDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pAddTime" Type="DateTime" Precision="3" />
+          <Property Name="AlbumId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="P_Question">
+          <Key>
+            <PropertyRef Name="qId" />
+          </Key>
+          <Property Name="qId" Type="Guid" Nullable="false" />
+          <Property Name="qTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qAsker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qAddTime" Type="DateTime" Precision="3" />
+          <Property Name="personId" Type="Guid" />
+          <Property Name="qClicks" Type="Int32" />
+        </EntityType>
+        <EntityType Name="P_Tags">
+          <Key>
+            <PropertyRef Name="tId" />
+          </Key>
+          <Property Name="tId" Type="Guid" Nullable="false" />
+          <Property Name="tName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tAddTime" Type="DateTime" Precision="3" />
+          <Property Name="tIsValid" Type="Boolean" />
+          <Property Name="tClicks" Type="Int32" />
+          <Property Name="classId" Type="Guid" />
+          <Property Name="newsId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="P_User">
+          <Key>
+            <PropertyRef Name="uId" />
+          </Key>
+          <Property Name="uId" Type="Guid" Nullable="false" />
+          <Property Name="uName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="uPhoto" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="uAge" Type="Int32" />
+          <Property Name="uSex" Type="Boolean" />
+          <Property Name="uMobile" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="uPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="uProvince" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="uCity" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="uZipCode" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="uAddr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uLoginTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="V_GetAlbumList">
+          <Key>
+            <PropertyRef Name="aId" />
+            <PropertyRef Name="cId" />
+          </Key>
+          <Property Name="aId" Type="Guid" Nullable="false" />
+          <Property Name="aName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aIntro" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="personId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aAddTime" Type="DateTime" Precision="3" />
+          <Property Name="aClicks" Type="Int32" />
+          <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cId" Type="Guid" Nullable="false" />
+          <Property Name="pCnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pPenName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_GetNews">
+          <Key>
+            <PropertyRef Name="nId" />
+            <PropertyRef Name="nTitle" />
+          </Key>
+          <Property Name="nId" Type="Guid" Nullable="false" />
+          <Property Name="nForm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nFormurl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="uId" Type="Guid" />
+          <Property Name="nAuthor" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="nTime" Type="DateTime" Precision="0" />
+          <Property Name="nTalks" Type="Int32" />
+          <Property Name="nClicks" Type="Int32" />
+          <Property Name="nTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nTitlepic" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="nTips" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="nContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="nTags" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nLinkurl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nIsPage" Type="Boolean" />
+          <Property Name="nClass2" Type="Int16" />
+          <Property Name="nStatus" Type="Int16" />
+          <Property Name="nLevel" Type="Byte" />
+          <Property Name="nIsRecommand" Type="Boolean" />
+          <Property Name="nIsDel" Type="Boolean" />
+          <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nClass1" Type="Guid" />
+        </EntityType>
+        <EntityType Name="v_GetPersonList">
+          <Key>
+            <PropertyRef Name="pId" />
+            <PropertyRef Name="cId" />
+          </Key>
+          <Property Name="pId" Type="Guid" Nullable="false" />
+          <Property Name="pCnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pPenName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pSex" Type="Boolean" />
+          <Property Name="pJob" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClassId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pAddTime" Type="DateTime" Precision="3" />
+          <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cOrder" Type="Int32" />
+          <Property Name="pTips" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="pPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pClicks" Type="Int32" />
+          <Property Name="pNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pBirthday" Type="DateTime" Precision="3" />
+          <Property Name="pHeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="pWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="pBWH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pUniversity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pHomeProvince" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pHomeCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cId" Type="Guid" Nullable="false" />
+          <Property Name="cParentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cLevel" Type="Int32" />
+          <Property Name="pHomeArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNowProvice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNowCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNowArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNowPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pBloodType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pSpeak" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pSinaBlog" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="pTencentBlog" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="pHomePage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pIntroduce" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_GetQuestionList">
+          <Key>
+            <PropertyRef Name="qId" />
+          </Key>
+          <Property Name="qId" Type="Guid" Nullable="false" />
+          <Property Name="qTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qAsker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qAddTime" Type="DateTime" Precision="3" />
+          <Property Name="personId" Type="Guid" />
+          <Property Name="qClicks" Type="Int32" />
+          <Property Name="pCnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pSex" Type="Boolean" />
+          <Property Name="pJob" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pNation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PeopleDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="P_Activity" EntityType="Self.P_Activity" />
+          <EntitySet Name="P_Album" EntityType="Self.P_Album" />
+          <EntitySet Name="P_AlbumInfo" EntityType="Self.P_AlbumInfo" />
+          <EntitySet Name="P_Answer" EntityType="Self.P_Answer" />
+          <EntitySet Name="P_Class" EntityType="Self.P_Class" />
+          <EntitySet Name="P_News" EntityType="Self.P_News" />
+          <EntitySet Name="P_Person" EntityType="Self.P_Person" />
+          <EntitySet Name="P_Photo" EntityType="Self.P_Photo" />
+          <EntitySet Name="P_Question" EntityType="Self.P_Question" />
+          <EntitySet Name="P_Tags" EntityType="Self.P_Tags" />
+          <EntitySet Name="P_User" EntityType="Self.P_User" />
+          <EntitySet Name="V_GetAlbumList" EntityType="Self.V_GetAlbumList" />
+          <EntitySet Name="v_GetNews" EntityType="Self.v_GetNews" />
+          <EntitySet Name="v_GetPersonList" EntityType="Self.v_GetPersonList" />
+          <EntitySet Name="V_GetQuestionList" EntityType="Self.V_GetQuestionList" />
+          <FunctionImport Name="P_AddNews">
+            <Parameter Name="nform" Mode="In" Type="String" />
+            <Parameter Name="nformurl" Mode="In" Type="String" />
+            <Parameter Name="nauthor" Mode="In" Type="String" />
+            <Parameter Name="ntitle" Mode="In" Type="String" />
+            <Parameter Name="ntitlepic" Mode="In" Type="String" />
+            <Parameter Name="ntips" Mode="In" Type="String" />
+            <Parameter Name="ncontent" Mode="In" Type="String" />
+            <Parameter Name="ntags" Mode="In" Type="String" />
+            <Parameter Name="nispage" Mode="In" Type="Boolean" />
+            <Parameter Name="nclass1" Mode="In" Type="Int32" />
+            <Parameter Name="nclass2" Mode="In" Type="Int32" />
+            <Parameter Name="nlevel" Mode="In" Type="Byte" />
+            <Parameter Name="nId" Mode="In" Type="Guid" />
+            <Parameter Name="personId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="P_EditNews">
+            <Parameter Name="nform" Mode="In" Type="String" />
+            <Parameter Name="nauthor" Mode="In" Type="String" />
+            <Parameter Name="ntitle" Mode="In" Type="String" />
+            <Parameter Name="ntitlepic" Mode="In" Type="String" />
+            <Parameter Name="ntips" Mode="In" Type="String" />
+            <Parameter Name="ncontent" Mode="In" Type="String" />
+            <Parameter Name="ntags" Mode="In" Type="String" />
+            <Parameter Name="nlinkurl" Mode="In" Type="String" />
+            <Parameter Name="nispage" Mode="In" Type="Boolean" />
+            <Parameter Name="nclass1" Mode="In" Type="Int32" />
+            <Parameter Name="nclass2" Mode="In" Type="Int32" />
+            <Parameter Name="nstatus" Mode="In" Type="Int32" />
+            <Parameter Name="nlevel" Mode="In" Type="Byte" />
+            <Parameter Name="nid" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="P_Paging">
+            <Parameter Name="Tables" Mode="In" Type="String" />
+            <Parameter Name="PrimaryKey" Mode="In" Type="String" />
+            <Parameter Name="CurrentPage" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="Filter" Mode="In" Type="String" />
+            <Parameter Name="Fields" Mode="In" Type="String" />
+            <Parameter Name="Sort" Mode="In" Type="String" />
+            <Parameter Name="Group" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="P_QueryBySql">
+            <Parameter Name="tablename" Mode="In" Type="String" />
+            <Parameter Name="fields" Mode="In" Type="String" />
+            <Parameter Name="condition" Mode="In" Type="String" />
+            <Parameter Name="toprows" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PeopleDBModelStoreContainer" CdmEntityContainer="PeopleDBEntities">
+          <EntitySetMapping Name="P_Activity">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_Activity">
+              <MappingFragment StoreEntitySet="P_Activity">
+                <ScalarProperty Name="aId" ColumnName="aId" />
+                <ScalarProperty Name="aTitle" ColumnName="aTitle" />
+                <ScalarProperty Name="aPlace" ColumnName="aPlace" />
+                <ScalarProperty Name="aContent" ColumnName="aContent" />
+                <ScalarProperty Name="aDatetime" ColumnName="aDatetime" />
+                <ScalarProperty Name="personId" ColumnName="personId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Album">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_Album">
+              <MappingFragment StoreEntitySet="P_Album">
+                <ScalarProperty Name="aId" ColumnName="aId" />
+                <ScalarProperty Name="aName" ColumnName="aName" />
+                <ScalarProperty Name="aPhoto" ColumnName="aPhoto" />
+                <ScalarProperty Name="aIntro" ColumnName="aIntro" />
+                <ScalarProperty Name="personId" ColumnName="personId" />
+                <ScalarProperty Name="aAddTime" ColumnName="aAddTime" />
+                <ScalarProperty Name="aClicks" ColumnName="aClicks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_AlbumInfo">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_AlbumInfo">
+              <MappingFragment StoreEntitySet="P_AlbumInfo">
+                <ScalarProperty Name="aiId" ColumnName="aiId" />
+                <ScalarProperty Name="aiUrl" ColumnName="aiUrl" />
+                <ScalarProperty Name="aiDesc" ColumnName="aiDesc" />
+                <ScalarProperty Name="albumId" ColumnName="albumId" />
+                <ScalarProperty Name="aiAddTime" ColumnName="aiAddTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Answer">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_Answer">
+              <MappingFragment StoreEntitySet="P_Answer">
+                <ScalarProperty Name="aId" ColumnName="aId" />
+                <ScalarProperty Name="aAddTime" ColumnName="aAddTime" />
+                <ScalarProperty Name="aContent" ColumnName="aContent" />
+                <ScalarProperty Name="qId" ColumnName="qId" />
+                <ScalarProperty Name="aGood" ColumnName="aGood" />
+                <ScalarProperty Name="aBad" ColumnName="aBad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Class">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_Class">
+              <MappingFragment StoreEntitySet="P_Class">
+                <ScalarProperty Name="cId" ColumnName="cId" />
+                <ScalarProperty Name="cName" ColumnName="cName" />
+                <ScalarProperty Name="cEnName" ColumnName="cEnName" />
+                <ScalarProperty Name="cParentId" ColumnName="cParentId" />
+                <ScalarProperty Name="cOrder" ColumnName="cOrder" />
+                <ScalarProperty Name="cLevel" ColumnName="cLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_News">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_News">
+              <MappingFragment StoreEntitySet="P_News">
+                <ScalarProperty Name="nId" ColumnName="nId" />
+                <ScalarProperty Name="nForm" ColumnName="nForm" />
+                <ScalarProperty Name="nFormurl" ColumnName="nFormurl" />
+                <ScalarProperty Name="nAuthor" ColumnName="nAuthor" />
+                <ScalarProperty Name="uId" ColumnName="uId" />
+                <ScalarProperty Name="nTime" ColumnName="nTime" />
+                <ScalarProperty Name="nTalks" ColumnName="nTalks" />
+                <ScalarProperty Name="nClicks" ColumnName="nClicks" />
+                <ScalarProperty Name="nTitle" ColumnName="nTitle" />
+                <ScalarProperty Name="nTitlepic" ColumnName="nTitlepic" />
+                <ScalarProperty Name="nTips" ColumnName="nTips" />
+                <ScalarProperty Name="nContent" ColumnName="nContent" />
+                <ScalarProperty Name="nTags" ColumnName="nTags" />
+                <ScalarProperty Name="nLinkurl" ColumnName="nLinkurl" />
+                <ScalarProperty Name="nIsPage" ColumnName="nIsPage" />
+                <ScalarProperty Name="nClass1" ColumnName="nClass1" />
+                <ScalarProperty Name="nClass2" ColumnName="nClass2" />
+                <ScalarProperty Name="nStatus" ColumnName="nStatus" />
+                <ScalarProperty Name="nLevel" ColumnName="nLevel" />
+                <ScalarProperty Name="nIsRecommand" ColumnName="nIsRecommand" />
+                <ScalarProperty Name="nIsDel" ColumnName="nIsDel" />
+                <ScalarProperty Name="personId" ColumnName="personId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Person">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_Person">
+              <MappingFragment StoreEntitySet="P_Person">
+                <ScalarProperty Name="pId" ColumnName="pId" />
+                <ScalarProperty Name="pCnName" ColumnName="pCnName" />
+                <ScalarProperty Name="pEnName" ColumnName="pEnName" />
+                <ScalarProperty Name="pPenName" ColumnName="pPenName" />
+                <ScalarProperty Name="pSex" ColumnName="pSex" />
+                <ScalarProperty Name="pJob" ColumnName="pJob" />
+                <ScalarProperty Name="pNationality" ColumnName="pNationality" />
+                <ScalarProperty Name="pNation" ColumnName="pNation" />
+                <ScalarProperty Name="pBirthday" ColumnName="pBirthday" />
+                <ScalarProperty Name="pZodiac" ColumnName="pZodiac" />
+                <ScalarProperty Name="pHeight" ColumnName="pHeight" />
+                <ScalarProperty Name="pWeight" ColumnName="pWeight" />
+                <ScalarProperty Name="pBWH" ColumnName="pBWH" />
+                <ScalarProperty Name="pUniversity" ColumnName="pUniversity" />
+                <ScalarProperty Name="pHomeProvince" ColumnName="pHomeProvince" />
+                <ScalarProperty Name="pHomeCity" ColumnName="pHomeCity" />
+                <ScalarProperty Name="pHomeArea" ColumnName="pHomeArea" />
+                <ScalarProperty Name="pNowProvice" ColumnName="pNowProvice" />
+                <ScalarProperty Name="pNowCity" ColumnName="pNowCity" />
+                <ScalarProperty Name="pNowArea" ColumnName="pNowArea" />
+                <ScalarProperty Name="pNowPlace" ColumnName="pNowPlace" />
+                <ScalarProperty Name="pBloodType" ColumnName="pBloodType" />
+                <ScalarProperty Name="pPhoto" ColumnName="pPhoto" />
+                <ScalarProperty Name="pSpeak" ColumnName="pSpeak" />
+                <ScalarProperty Name="pSinaBlog" ColumnName="pSinaBlog" />
+                <ScalarProperty Name="pTencentBlog" ColumnName="pTencentBlog" />
+                <ScalarProperty Name="pHomePage" ColumnName="pHomePage" />
+                <ScalarProperty Name="pTips" ColumnName="pTips" />
+                <ScalarProperty Name="pIntroduce" ColumnName="pIntroduce" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="pClicks" ColumnName="pClicks" />
+                <ScalarProperty Name="pAddTime" ColumnName="pAddTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Photo">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_Photo">
+              <MappingFragment StoreEntitySet="P_Photo">
+                <ScalarProperty Name="pId" ColumnName="pId" />
+                <ScalarProperty Name="pUrl" ColumnName="pUrl" />
+                <ScalarProperty Name="pDesc" ColumnName="pDesc" />
+                <ScalarProperty Name="pAddTime" ColumnName="pAddTime" />
+                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Question">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_Question">
+              <MappingFragment StoreEntitySet="P_Question">
+                <ScalarProperty Name="qId" ColumnName="qId" />
+                <ScalarProperty Name="qTitle" ColumnName="qTitle" />
+                <ScalarProperty Name="qAsker" ColumnName="qAsker" />
+                <ScalarProperty Name="qAddTime" ColumnName="qAddTime" />
+                <ScalarProperty Name="personId" ColumnName="personId" />
+                <ScalarProperty Name="qClicks" ColumnName="qClicks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_Tags">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_Tags">
+              <MappingFragment StoreEntitySet="P_Tags">
+                <ScalarProperty Name="tId" ColumnName="tId" />
+                <ScalarProperty Name="tName" ColumnName="tName" />
+                <ScalarProperty Name="tAddTime" ColumnName="tAddTime" />
+                <ScalarProperty Name="tIsValid" ColumnName="tIsValid" />
+                <ScalarProperty Name="tClicks" ColumnName="tClicks" />
+                <ScalarProperty Name="classId" ColumnName="classId" />
+                <ScalarProperty Name="newsId" ColumnName="newsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="P_User">
+            <EntityTypeMapping TypeName="PeopleDBModel.P_User">
+              <MappingFragment StoreEntitySet="P_User">
+                <ScalarProperty Name="uId" ColumnName="uId" />
+                <ScalarProperty Name="uName" ColumnName="uName" />
+                <ScalarProperty Name="uPwd" ColumnName="uPwd" />
+                <ScalarProperty Name="uPhoto" ColumnName="uPhoto" />
+                <ScalarProperty Name="uAge" ColumnName="uAge" />
+                <ScalarProperty Name="uSex" ColumnName="uSex" />
+                <ScalarProperty Name="uMobile" ColumnName="uMobile" />
+                <ScalarProperty Name="uPhone" ColumnName="uPhone" />
+                <ScalarProperty Name="uProvince" ColumnName="uProvince" />
+                <ScalarProperty Name="uCity" ColumnName="uCity" />
+                <ScalarProperty Name="uZipCode" ColumnName="uZipCode" />
+                <ScalarProperty Name="uAddr" ColumnName="uAddr" />
+                <ScalarProperty Name="uLoginTime" ColumnName="uLoginTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_GetAlbumList">
+            <EntityTypeMapping TypeName="PeopleDBModel.V_GetAlbumList">
+              <MappingFragment StoreEntitySet="V_GetAlbumList">
+                <ScalarProperty Name="aId" ColumnName="aId" />
+                <ScalarProperty Name="aName" ColumnName="aName" />
+                <ScalarProperty Name="aPhoto" ColumnName="aPhoto" />
+                <ScalarProperty Name="aIntro" ColumnName="aIntro" />
+                <ScalarProperty Name="personId" ColumnName="personId" />
+                <ScalarProperty Name="aAddTime" ColumnName="aAddTime" />
+                <ScalarProperty Name="aClicks" ColumnName="aClicks" />
+                <ScalarProperty Name="cName" ColumnName="cName" />
+                <ScalarProperty Name="cEnName" ColumnName="cEnName" />
+                <ScalarProperty Name="cId" ColumnName="cId" />
+                <ScalarProperty Name="pCnName" ColumnName="pCnName" />
+                <ScalarProperty Name="pPenName" ColumnName="pPenName" />
+                <ScalarProperty Name="pEnName" ColumnName="pEnName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_GetNews">
+            <EntityTypeMapping TypeName="PeopleDBModel.v_GetNews">
+              <MappingFragment StoreEntitySet="v_GetNews">
+                <ScalarProperty Name="nId" ColumnName="nId" />
+                <ScalarProperty Name="nForm" ColumnName="nForm" />
+                <ScalarProperty Name="nFormurl" ColumnName="nFormurl" />
+                <ScalarProperty Name="uId" ColumnName="uId" />
+                <ScalarProperty Name="nAuthor" ColumnName="nAuthor" />
+                <ScalarProperty Name="nTime" ColumnName="nTime" />
+                <ScalarProperty Name="nTalks" ColumnName="nTalks" />
+                <ScalarProperty Name="nClicks" ColumnName="nClicks" />
+                <ScalarProperty Name="nTitle" ColumnName="nTitle" />
+                <ScalarProperty Name="nTitlepic" ColumnName="nTitlepic" />
+                <ScalarProperty Name="nTips" ColumnName="nTips" />
+                <ScalarProperty Name="nContent" ColumnName="nContent" />
+                <ScalarProperty Name="nTags" ColumnName="nTags" />
+                <ScalarProperty Name="nLinkurl" ColumnName="nLinkurl" />
+                <ScalarProperty Name="nIsPage" ColumnName="nIsPage" />
+                <ScalarProperty Name="nClass2" ColumnName="nClass2" />
+                <ScalarProperty Name="nStatus" ColumnName="nStatus" />
+                <ScalarProperty Name="nLevel" ColumnName="nLevel" />
+                <ScalarProperty Name="nIsRecommand" ColumnName="nIsRecommand" />
+                <ScalarProperty Name="nIsDel" ColumnName="nIsDel" />
+                <ScalarProperty Name="cName" ColumnName="cName" />
+                <ScalarProperty Name="cEnName" ColumnName="cEnName" />
+                <ScalarProperty Name="nClass1" ColumnName="nClass1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_GetPersonList">
+            <EntityTypeMapping TypeName="PeopleDBModel.v_GetPersonList">
+              <MappingFragment StoreEntitySet="v_GetPersonList">
+                <ScalarProperty Name="pId" ColumnName="pId" />
+                <ScalarProperty Name="pCnName" ColumnName="pCnName" />
+                <ScalarProperty Name="pEnName" ColumnName="pEnName" />
+                <ScalarProperty Name="pPenName" ColumnName="pPenName" />
+                <ScalarProperty Name="pSex" ColumnName="pSex" />
+                <ScalarProperty Name="pJob" ColumnName="pJob" />
+                <ScalarProperty Name="pNation" ColumnName="pNation" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="pAddTime" ColumnName="pAddTime" />
+                <ScalarProperty Name="cName" ColumnName="cName" />
+                <ScalarProperty Name="cEnName" ColumnName="cEnName" />
+                <ScalarProperty Name="cOrder" ColumnName="cOrder" />
+                <ScalarProperty Name="pTips" ColumnName="pTips" />
+                <ScalarProperty Name="pPhoto" ColumnName="pPhoto" />
+                <ScalarProperty Name="pClicks" ColumnName="pClicks" />
+                <ScalarProperty Name="pNationality" ColumnName="pNationality" />
+                <ScalarProperty Name="pBirthday" ColumnName="pBirthday" />
+                <ScalarProperty Name="pHeight" ColumnName="pHeight" />
+                <ScalarProperty Name="pWeight" ColumnName="pWeight" />
+                <ScalarProperty Name="pBWH" ColumnName="pBWH" />
+                <ScalarProperty Name="pUniversity" ColumnName="pUniversity" />
+                <ScalarProperty Name="pHomeProvince" ColumnName="pHomeProvince" />
+                <ScalarProperty Name="pHomeCity" ColumnName="pHomeCity" />
+                <ScalarProperty Name="cId" ColumnName="cId" />
+                <ScalarProperty Name="cParentId" ColumnName="cParentId" />
+                <ScalarProperty Name="cLevel" ColumnName="cLevel" />
+                <ScalarProperty Name="pHomeArea" ColumnName="pHomeArea" />
+                <ScalarProperty Name="pNowProvice" ColumnName="pNowProvice" />
+                <ScalarProperty Name="pNowCity" ColumnName="pNowCity" />
+                <ScalarProperty Name="pNowArea" ColumnName="pNowArea" />
+                <ScalarProperty Name="pNowPlace" ColumnName="pNowPlace" />
+                <ScalarProperty Name="pBloodType" ColumnName="pBloodType" />
+                <ScalarProperty Name="pSpeak" ColumnName="pSpeak" />
+                <ScalarProperty Name="pSinaBlog" ColumnName="pSinaBlog" />
+                <ScalarProperty Name="pTencentBlog" ColumnName="pTencentBlog" />
+                <ScalarProperty Name="pHomePage" ColumnName="pHomePage" />
+                <ScalarProperty Name="pIntroduce" ColumnName="pIntroduce" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_GetQuestionList">
+            <EntityTypeMapping TypeName="PeopleDBModel.V_GetQuestionList">
+              <MappingFragment StoreEntitySet="V_GetQuestionList">
+                <ScalarProperty Name="qId" ColumnName="qId" />
+                <ScalarProperty Name="qTitle" ColumnName="qTitle" />
+                <ScalarProperty Name="qAsker" ColumnName="qAsker" />
+                <ScalarProperty Name="qAddTime" ColumnName="qAddTime" />
+                <ScalarProperty Name="personId" ColumnName="personId" />
+                <ScalarProperty Name="qClicks" ColumnName="qClicks" />
+                <ScalarProperty Name="pCnName" ColumnName="pCnName" />
+                <ScalarProperty Name="pEnName" ColumnName="pEnName" />
+                <ScalarProperty Name="cName" ColumnName="cName" />
+                <ScalarProperty Name="cEnName" ColumnName="cEnName" />
+                <ScalarProperty Name="pSex" ColumnName="pSex" />
+                <ScalarProperty Name="pJob" ColumnName="pJob" />
+                <ScalarProperty Name="pNationality" ColumnName="pNationality" />
+                <ScalarProperty Name="pNation" ColumnName="pNation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="P_AddNews" FunctionName="PeopleDBModel.Store.P_AddNews" />
+          <FunctionImportMapping FunctionImportName="P_EditNews" FunctionName="PeopleDBModel.Store.P_EditNews" />
+          <FunctionImportMapping FunctionImportName="P_Paging" FunctionName="PeopleDBModel.Store.P_Paging" />
+          <FunctionImportMapping FunctionImportName="P_QueryBySql" FunctionName="PeopleDBModel.Store.P_QueryBySql" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

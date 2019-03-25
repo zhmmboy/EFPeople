@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PeopleDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="P_Activity">
+    <Key>
+      <PropertyRef Name="aId" />
+    </Key>
+    <Property Name="aId" Type="Guid" Nullable="false" />
+    <Property Name="aTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="aDatetime" Type="DateTime" Precision="3" />
+    <Property Name="personId" Type="Guid" />
+  </EntityType>
+  <EntityType Name="P_Album">
+    <Key>
+      <PropertyRef Name="aId" />
+    </Key>
+    <Property Name="aId" Type="Guid" Nullable="false" />
+    <Property Name="aName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="aIntro" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="personId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aAddTime" Type="DateTime" Precision="3" />
+    <Property Name="aClicks" Type="Int32" />
+  </EntityType>
+  <EntityType Name="P_AlbumInfo">
+    <Key>
+      <PropertyRef Name="aiId" />
+    </Key>
+    <Property Name="aiId" Type="Guid" Nullable="false" />
+    <Property Name="aiUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aiDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="albumId" Type="Guid" />
+    <Property Name="aiAddTime" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="P_Answer">
+    <Key>
+      <PropertyRef Name="aId" />
+    </Key>
+    <Property Name="aId" Type="Guid" Nullable="false" />
+    <Property Name="aAddTime" Type="DateTime" Precision="3" />
+    <Property Name="aContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="qId" Type="Guid" />
+    <Property Name="aGood" Type="Int32" />
+    <Property Name="aBad" Type="Int32" />
+  </EntityType>
+  <EntityType Name="P_Class">
+    <Key>
+      <PropertyRef Name="cId" />
+    </Key>
+    <Property Name="cId" Type="Guid" Nullable="false" />
+    <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cParentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cOrder" Type="Int32" />
+    <Property Name="cLevel" Type="Int32" />
+  </EntityType>
+  <EntityType Name="P_News">
+    <Key>
+      <PropertyRef Name="nId" />
+    </Key>
+    <Property Name="nId" Type="Guid" Nullable="false" />
+    <Property Name="nForm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nFormurl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="nAuthor" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="uId" Type="Guid" />
+    <Property Name="nTime" Type="DateTime" Precision="0" />
+    <Property Name="nTalks" Type="Int32" />
+    <Property Name="nClicks" Type="Int32" />
+    <Property Name="nTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nTitlepic" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="nTips" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="nContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nTags" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nLinkurl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nIsPage" Type="Boolean" />
+    <Property Name="nClass1" Type="Guid" />
+    <Property Name="nClass2" Type="Int16" />
+    <Property Name="nStatus" Type="Int16" />
+    <Property Name="nLevel" Type="Byte" />
+    <Property Name="nIsRecommand" Type="Boolean" />
+    <Property Name="nIsDel" Type="Boolean" />
+    <Property Name="personId" Type="Guid" />
+  </EntityType>
+  <EntityType Name="P_Person">
+    <Key>
+      <PropertyRef Name="pId" />
+    </Key>
+    <Property Name="pId" Type="Guid" Nullable="false" />
+    <Property Name="pCnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pPenName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pSex" Type="Boolean" />
+    <Property Name="pJob" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pBirthday" Type="DateTime" Precision="3" />
+    <Property Name="pZodiac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pHeight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="pWeight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="pBWH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pUniversity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pHomeProvince" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pHomeCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pHomeArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNowProvice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNowCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNowArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNowPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pBloodType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pSpeak" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pSinaBlog" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="pTencentBlog" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="pHomePage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pTips" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="pIntroduce" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClassId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pClicks" Type="Int32" />
+    <Property Name="pAddTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="P_Photo">
+    <Key>
+      <PropertyRef Name="pId" />
+    </Key>
+    <Property Name="pId" Type="Guid" Nullable="false" />
+    <Property Name="pUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="pDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pAddTime" Type="DateTime" Precision="3" />
+    <Property Name="AlbumId" Type="Guid" />
+  </EntityType>
+  <EntityType Name="P_Question">
+    <Key>
+      <PropertyRef Name="qId" />
+    </Key>
+    <Property Name="qId" Type="Guid" Nullable="false" />
+    <Property Name="qTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qAsker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qAddTime" Type="DateTime" Precision="3" />
+    <Property Name="personId" Type="Guid" />
+    <Property Name="qClicks" Type="Int32" />
+  </EntityType>
+  <EntityType Name="P_Tags">
+    <Key>
+      <PropertyRef Name="tId" />
+    </Key>
+    <Property Name="tId" Type="Guid" Nullable="false" />
+    <Property Name="tName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tAddTime" Type="DateTime" Precision="3" />
+    <Property Name="tIsValid" Type="Boolean" />
+    <Property Name="tClicks" Type="Int32" />
+    <Property Name="classId" Type="Guid" />
+    <Property Name="newsId" Type="Guid" />
+  </EntityType>
+  <EntityType Name="P_User">
+    <Key>
+      <PropertyRef Name="uId" />
+    </Key>
+    <Property Name="uId" Type="Guid" Nullable="false" />
+    <Property Name="uName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="uPhoto" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="uAge" Type="Int32" />
+    <Property Name="uSex" Type="Boolean" />
+    <Property Name="uMobile" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="uPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="uProvince" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="uCity" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="uZipCode" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="uAddr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uLoginTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_GetAlbumList">
+    <Key>
+      <PropertyRef Name="aId" />
+      <PropertyRef Name="cId" />
+    </Key>
+    <Property Name="aId" Type="Guid" Nullable="false" />
+    <Property Name="aName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="aIntro" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="personId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aAddTime" Type="DateTime" Precision="3" />
+    <Property Name="aClicks" Type="Int32" />
+    <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cId" Type="Guid" Nullable="false" />
+    <Property Name="pCnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pPenName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="v_GetNews">
+    <Key>
+      <PropertyRef Name="nId" />
+      <PropertyRef Name="nTitle" />
+    </Key>
+    <Property Name="nId" Type="Guid" Nullable="false" />
+    <Property Name="nForm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nFormurl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="uId" Type="Guid" />
+    <Property Name="nAuthor" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="nTime" Type="DateTime" Precision="0" />
+    <Property Name="nTalks" Type="Int32" />
+    <Property Name="nClicks" Type="Int32" />
+    <Property Name="nTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nTitlepic" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="nTips" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="nContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nTags" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nLinkurl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nIsPage" Type="Boolean" />
+    <Property Name="nClass2" Type="Int16" />
+    <Property Name="nStatus" Type="Int16" />
+    <Property Name="nLevel" Type="Byte" />
+    <Property Name="nIsRecommand" Type="Boolean" />
+    <Property Name="nIsDel" Type="Boolean" />
+    <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nClass1" Type="Guid" />
+  </EntityType>
+  <EntityType Name="v_GetPersonList">
+    <Key>
+      <PropertyRef Name="pId" />
+      <PropertyRef Name="cId" />
+    </Key>
+    <Property Name="pId" Type="Guid" Nullable="false" />
+    <Property Name="pCnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pPenName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pSex" Type="Boolean" />
+    <Property Name="pJob" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ClassId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pAddTime" Type="DateTime" Precision="3" />
+    <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cOrder" Type="Int32" />
+    <Property Name="pTips" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="pPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pClicks" Type="Int32" />
+    <Property Name="pNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pBirthday" Type="DateTime" Precision="3" />
+    <Property Name="pHeight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="pWeight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="pBWH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pUniversity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pHomeProvince" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pHomeCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cId" Type="Guid" Nullable="false" />
+    <Property Name="cParentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cLevel" Type="Int32" />
+    <Property Name="pHomeArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNowProvice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNowCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNowArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNowPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pBloodType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pSpeak" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pSinaBlog" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="pTencentBlog" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="pHomePage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pIntroduce" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_GetQuestionList">
+    <Key>
+      <PropertyRef Name="qId" />
+    </Key>
+    <Property Name="qId" Type="Guid" Nullable="false" />
+    <Property Name="qTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qAsker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qAddTime" Type="DateTime" Precision="3" />
+    <Property Name="personId" Type="Guid" />
+    <Property Name="qClicks" Type="Int32" />
+    <Property Name="pCnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pSex" Type="Boolean" />
+    <Property Name="pJob" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pNation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="PeopleDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="P_Activity" EntityType="Self.P_Activity" />
+    <EntitySet Name="P_Album" EntityType="Self.P_Album" />
+    <EntitySet Name="P_AlbumInfo" EntityType="Self.P_AlbumInfo" />
+    <EntitySet Name="P_Answer" EntityType="Self.P_Answer" />
+    <EntitySet Name="P_Class" EntityType="Self.P_Class" />
+    <EntitySet Name="P_News" EntityType="Self.P_News" />
+    <EntitySet Name="P_Person" EntityType="Self.P_Person" />
+    <EntitySet Name="P_Photo" EntityType="Self.P_Photo" />
+    <EntitySet Name="P_Question" EntityType="Self.P_Question" />
+    <EntitySet Name="P_Tags" EntityType="Self.P_Tags" />
+    <EntitySet Name="P_User" EntityType="Self.P_User" />
+    <EntitySet Name="V_GetAlbumList" EntityType="Self.V_GetAlbumList" />
+    <EntitySet Name="v_GetNews" EntityType="Self.v_GetNews" />
+    <EntitySet Name="v_GetPersonList" EntityType="Self.v_GetPersonList" />
+    <EntitySet Name="V_GetQuestionList" EntityType="Self.V_GetQuestionList" />
+    <FunctionImport Name="P_AddNews">
+      <Parameter Name="nform" Mode="In" Type="String" />
+      <Parameter Name="nformurl" Mode="In" Type="String" />
+      <Parameter Name="nauthor" Mode="In" Type="String" />
+      <Parameter Name="ntitle" Mode="In" Type="String" />
+      <Parameter Name="ntitlepic" Mode="In" Type="String" />
+      <Parameter Name="ntips" Mode="In" Type="String" />
+      <Parameter Name="ncontent" Mode="In" Type="String" />
+      <Parameter Name="ntags" Mode="In" Type="String" />
+      <Parameter Name="nispage" Mode="In" Type="Boolean" />
+      <Parameter Name="nclass1" Mode="In" Type="Int32" />
+      <Parameter Name="nclass2" Mode="In" Type="Int32" />
+      <Parameter Name="nlevel" Mode="In" Type="Byte" />
+      <Parameter Name="nId" Mode="In" Type="Guid" />
+      <Parameter Name="personId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="P_EditNews">
+      <Parameter Name="nform" Mode="In" Type="String" />
+      <Parameter Name="nauthor" Mode="In" Type="String" />
+      <Parameter Name="ntitle" Mode="In" Type="String" />
+      <Parameter Name="ntitlepic" Mode="In" Type="String" />
+      <Parameter Name="ntips" Mode="In" Type="String" />
+      <Parameter Name="ncontent" Mode="In" Type="String" />
+      <Parameter Name="ntags" Mode="In" Type="String" />
+      <Parameter Name="nlinkurl" Mode="In" Type="String" />
+      <Parameter Name="nispage" Mode="In" Type="Boolean" />
+      <Parameter Name="nclass1" Mode="In" Type="Int32" />
+      <Parameter Name="nclass2" Mode="In" Type="Int32" />
+      <Parameter Name="nstatus" Mode="In" Type="Int32" />
+      <Parameter Name="nlevel" Mode="In" Type="Byte" />
+      <Parameter Name="nid" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="P_Paging">
+      <Parameter Name="Tables" Mode="In" Type="String" />
+      <Parameter Name="PrimaryKey" Mode="In" Type="String" />
+      <Parameter Name="CurrentPage" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="Filter" Mode="In" Type="String" />
+      <Parameter Name="Fields" Mode="In" Type="String" />
+      <Parameter Name="Sort" Mode="In" Type="String" />
+      <Parameter Name="Group" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="P_QueryBySql">
+      <Parameter Name="tablename" Mode="In" Type="String" />
+      <Parameter Name="fields" Mode="In" Type="String" />
+      <Parameter Name="condition" Mode="In" Type="String" />
+      <Parameter Name="toprows" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

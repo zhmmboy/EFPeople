@@ -1,0 +1,63 @@
+﻿@model People.Models.P_User
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model=>model.uId)
+        @Html.LabelFor(model => model.uName, htmlAttributes: new { @class = "addInput" })<br />
+        @Html.ValidationMessageFor(model => model.uName)
+        @Html.EditorFor(model => model.uName)<br />
+        @Html.ValidationMessageFor(model => model.uName)
+
+        @Html.LabelFor(model => model.uSex)
+        @Html.RadioButtonFor(model => model.uSex,"true")<span>男</span><br />
+        @Html.RadioButtonFor(model => model.uSex, "false")<span>女</span><br />
+        @Html.ValidationMessageFor(model => model.uSex)
+
+        @Html.LabelFor(model => model.uPwd)<br />
+        @Html.EditorFor(model => model.uPwd)<br />
+        @Html.ValidationMessageFor(model => model.uPwd)
+
+        @Html.LabelFor(model => model.uProvince)<br />
+        @Html.EditorFor(model => model.uProvince)<br />
+        @Html.ValidationMessageFor(model => model.uProvince)
+
+        @Html.LabelFor(model => model.uCity)<br />
+        @Html.EditorFor(model => model.uCity)<br />
+        @Html.ValidationMessageFor(model => model.uCity)
+
+        @Html.LabelFor(model => model.uPhone)<br />
+        @Html.EditorFor(model => model.uPhone)<br />
+        @Html.ValidationMessageFor(model => model.uPhone)
+
+        @Html.LabelFor(model => model.uMobile)<br />
+        @Html.EditorFor(model => model.uMobile)<br />
+        @Html.ValidationMessageFor(model => model.uMobile)
+
+        @Html.EditorFor(model => model.uZipCode)<br />
+        @Html.EditorFor(model => model.uZipCode)<br />
+        @Html.ValidationMessageFor(model => model.uZipCode)
+
+        @Html.LabelFor(model => model.uAddr)<br />
+        @Html.EditorFor(model => model.uAddr)
+        @Html.ValidationMessageFor(model => model.uAddr)
+
+        @Html.LabelFor(model => model.uLoginTime)<br />
+        @Html.EditorFor(model => model.uLoginTime)
+        @Html.ValidationMessageFor(model => model.uLoginTime)
+
+        <input type="submit" value="submit" />
+
+    }
+
+    @Html.ActionLink("back", "Index")
+</div>

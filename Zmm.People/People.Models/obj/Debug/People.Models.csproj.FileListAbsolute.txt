@@ -8,3 +8,12 @@ E:\MySpace\Zmm.People\People.Models\bin\Debug\EntityFramework.SqlServer.xml
 E:\MySpace\Zmm.People\People.Models\obj\Debug\People.Models.csprojResolveAssemblyReference.cache
 E:\MySpace\Zmm.People\People.Models\obj\Debug\People.Models.dll
 E:\MySpace\Zmm.People\People.Models\obj\Debug\People.Models.pdb
+E:\MyGit\Zmm.People\People.Models\bin\Debug\People.Models.dll.config
+E:\MyGit\Zmm.People\People.Models\bin\Debug\People.Models.dll
+E:\MyGit\Zmm.People\People.Models\bin\Debug\People.Models.pdb
+E:\MyGit\Zmm.People\People.Models\bin\Debug\EntityFramework.dll
+E:\MyGit\Zmm.People\People.Models\bin\Debug\EntityFramework.SqlServer.dll
+E:\MyGit\Zmm.People\People.Models\bin\Debug\EntityFramework.xml
+E:\MyGit\Zmm.People\People.Models\bin\Debug\EntityFramework.SqlServer.xml
+E:\MyGit\Zmm.People\People.Models\obj\Debug\People.Models.dll
+E:\MyGit\Zmm.People\People.Models\obj\Debug\People.Models.pdb

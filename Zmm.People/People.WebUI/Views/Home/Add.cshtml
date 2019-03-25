@@ -1,0 +1,123 @@
+﻿@model People.Models.P_User
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>P_User</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.uName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uName)
+                @Html.ValidationMessageFor(model => model.uName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uPwd, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uPwd)
+                @Html.ValidationMessageFor(model => model.uPwd)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uPhoto)
+                @Html.ValidationMessageFor(model => model.uPhoto)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uAge, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uAge)
+                @Html.ValidationMessageFor(model => model.uAge)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uSex, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uSex)
+                @Html.ValidationMessageFor(model => model.uSex)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uMobile, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uMobile)
+                @Html.ValidationMessageFor(model => model.uMobile)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uPhone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uPhone)
+                @Html.ValidationMessageFor(model => model.uPhone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uProvince, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uProvince)
+                @Html.ValidationMessageFor(model => model.uProvince)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uCity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uCity)
+                @Html.ValidationMessageFor(model => model.uCity)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uZipCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uZipCode)
+                @Html.ValidationMessageFor(model => model.uZipCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uAddr, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uAddr)
+                @Html.ValidationMessageFor(model => model.uAddr)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uLoginTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uLoginTime)
+                @Html.ValidationMessageFor(model => model.uLoginTime)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

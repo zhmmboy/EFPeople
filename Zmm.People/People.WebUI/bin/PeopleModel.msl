@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PeopleDBModelStoreContainer" CdmEntityContainer="PeopleDBEntities">
+    <EntitySetMapping Name="P_Activity">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_Activity">
+        <MappingFragment StoreEntitySet="P_Activity">
+          <ScalarProperty Name="aId" ColumnName="aId" />
+          <ScalarProperty Name="aTitle" ColumnName="aTitle" />
+          <ScalarProperty Name="aPlace" ColumnName="aPlace" />
+          <ScalarProperty Name="aContent" ColumnName="aContent" />
+          <ScalarProperty Name="aDatetime" ColumnName="aDatetime" />
+          <ScalarProperty Name="personId" ColumnName="personId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_Album">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_Album">
+        <MappingFragment StoreEntitySet="P_Album">
+          <ScalarProperty Name="aId" ColumnName="aId" />
+          <ScalarProperty Name="aName" ColumnName="aName" />
+          <ScalarProperty Name="aPhoto" ColumnName="aPhoto" />
+          <ScalarProperty Name="aIntro" ColumnName="aIntro" />
+          <ScalarProperty Name="personId" ColumnName="personId" />
+          <ScalarProperty Name="aAddTime" ColumnName="aAddTime" />
+          <ScalarProperty Name="aClicks" ColumnName="aClicks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_AlbumInfo">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_AlbumInfo">
+        <MappingFragment StoreEntitySet="P_AlbumInfo">
+          <ScalarProperty Name="aiId" ColumnName="aiId" />
+          <ScalarProperty Name="aiUrl" ColumnName="aiUrl" />
+          <ScalarProperty Name="aiDesc" ColumnName="aiDesc" />
+          <ScalarProperty Name="albumId" ColumnName="albumId" />
+          <ScalarProperty Name="aiAddTime" ColumnName="aiAddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_Answer">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_Answer">
+        <MappingFragment StoreEntitySet="P_Answer">
+          <ScalarProperty Name="aId" ColumnName="aId" />
+          <ScalarProperty Name="aAddTime" ColumnName="aAddTime" />
+          <ScalarProperty Name="aContent" ColumnName="aContent" />
+          <ScalarProperty Name="qId" ColumnName="qId" />
+          <ScalarProperty Name="aGood" ColumnName="aGood" />
+          <ScalarProperty Name="aBad" ColumnName="aBad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_Class">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_Class">
+        <MappingFragment StoreEntitySet="P_Class">
+          <ScalarProperty Name="cId" ColumnName="cId" />
+          <ScalarProperty Name="cName" ColumnName="cName" />
+          <ScalarProperty Name="cEnName" ColumnName="cEnName" />
+          <ScalarProperty Name="cParentId" ColumnName="cParentId" />
+          <ScalarProperty Name="cOrder" ColumnName="cOrder" />
+          <ScalarProperty Name="cLevel" ColumnName="cLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_News">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_News">
+        <MappingFragment StoreEntitySet="P_News">
+          <ScalarProperty Name="nId" ColumnName="nId" />
+          <ScalarProperty Name="nForm" ColumnName="nForm" />
+          <ScalarProperty Name="nFormurl" ColumnName="nFormurl" />
+          <ScalarProperty Name="nAuthor" ColumnName="nAuthor" />
+          <ScalarProperty Name="uId" ColumnName="uId" />
+          <ScalarProperty Name="nTime" ColumnName="nTime" />
+          <ScalarProperty Name="nTalks" ColumnName="nTalks" />
+          <ScalarProperty Name="nClicks" ColumnName="nClicks" />
+          <ScalarProperty Name="nTitle" ColumnName="nTitle" />
+          <ScalarProperty Name="nTitlepic" ColumnName="nTitlepic" />
+          <ScalarProperty Name="nTips" ColumnName="nTips" />
+          <ScalarProperty Name="nContent" ColumnName="nContent" />
+          <ScalarProperty Name="nTags" ColumnName="nTags" />
+          <ScalarProperty Name="nLinkurl" ColumnName="nLinkurl" />
+          <ScalarProperty Name="nIsPage" ColumnName="nIsPage" />
+          <ScalarProperty Name="nClass1" ColumnName="nClass1" />
+          <ScalarProperty Name="nClass2" ColumnName="nClass2" />
+          <ScalarProperty Name="nStatus" ColumnName="nStatus" />
+          <ScalarProperty Name="nLevel" ColumnName="nLevel" />
+          <ScalarProperty Name="nIsRecommand" ColumnName="nIsRecommand" />
+          <ScalarProperty Name="nIsDel" ColumnName="nIsDel" />
+          <ScalarProperty Name="personId" ColumnName="personId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_Person">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_Person">
+        <MappingFragment StoreEntitySet="P_Person">
+          <ScalarProperty Name="pId" ColumnName="pId" />
+          <ScalarProperty Name="pCnName" ColumnName="pCnName" />
+          <ScalarProperty Name="pEnName" ColumnName="pEnName" />
+          <ScalarProperty Name="pPenName" ColumnName="pPenName" />
+          <ScalarProperty Name="pSex" ColumnName="pSex" />
+          <ScalarProperty Name="pJob" ColumnName="pJob" />
+          <ScalarProperty Name="pNationality" ColumnName="pNationality" />
+          <ScalarProperty Name="pNation" ColumnName="pNation" />
+          <ScalarProperty Name="pBirthday" ColumnName="pBirthday" />
+          <ScalarProperty Name="pZodiac" ColumnName="pZodiac" />
+          <ScalarProperty Name="pHeight" ColumnName="pHeight" />
+          <ScalarProperty Name="pWeight" ColumnName="pWeight" />
+          <ScalarProperty Name="pBWH" ColumnName="pBWH" />
+          <ScalarProperty Name="pUniversity" ColumnName="pUniversity" />
+          <ScalarProperty Name="pHomeProvince" ColumnName="pHomeProvince" />
+          <ScalarProperty Name="pHomeCity" ColumnName="pHomeCity" />
+          <ScalarProperty Name="pHomeArea" ColumnName="pHomeArea" />
+          <ScalarProperty Name="pNowProvice" ColumnName="pNowProvice" />
+          <ScalarProperty Name="pNowCity" ColumnName="pNowCity" />
+          <ScalarProperty Name="pNowArea" ColumnName="pNowArea" />
+          <ScalarProperty Name="pNowPlace" ColumnName="pNowPlace" />
+          <ScalarProperty Name="pBloodType" ColumnName="pBloodType" />
+          <ScalarProperty Name="pPhoto" ColumnName="pPhoto" />
+          <ScalarProperty Name="pSpeak" ColumnName="pSpeak" />
+          <ScalarProperty Name="pSinaBlog" ColumnName="pSinaBlog" />
+          <ScalarProperty Name="pTencentBlog" ColumnName="pTencentBlog" />
+          <ScalarProperty Name="pHomePage" ColumnName="pHomePage" />
+          <ScalarProperty Name="pTips" ColumnName="pTips" />
+          <ScalarProperty Name="pIntroduce" ColumnName="pIntroduce" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="pClicks" ColumnName="pClicks" />
+          <ScalarProperty Name="pAddTime" ColumnName="pAddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_Photo">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_Photo">
+        <MappingFragment StoreEntitySet="P_Photo">
+          <ScalarProperty Name="pId" ColumnName="pId" />
+          <ScalarProperty Name="pUrl" ColumnName="pUrl" />
+          <ScalarProperty Name="pDesc" ColumnName="pDesc" />
+          <ScalarProperty Name="pAddTime" ColumnName="pAddTime" />
+          <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_Question">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_Question">
+        <MappingFragment StoreEntitySet="P_Question">
+          <ScalarProperty Name="qId" ColumnName="qId" />
+          <ScalarProperty Name="qTitle" ColumnName="qTitle" />
+          <ScalarProperty Name="qAsker" ColumnName="qAsker" />
+          <ScalarProperty Name="qAddTime" ColumnName="qAddTime" />
+          <ScalarProperty Name="personId" ColumnName="personId" />
+          <ScalarProperty Name="qClicks" ColumnName="qClicks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_Tags">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_Tags">
+        <MappingFragment StoreEntitySet="P_Tags">
+          <ScalarProperty Name="tId" ColumnName="tId" />
+          <ScalarProperty Name="tName" ColumnName="tName" />
+          <ScalarProperty Name="tAddTime" ColumnName="tAddTime" />
+          <ScalarProperty Name="tIsValid" ColumnName="tIsValid" />
+          <ScalarProperty Name="tClicks" ColumnName="tClicks" />
+          <ScalarProperty Name="classId" ColumnName="classId" />
+          <ScalarProperty Name="newsId" ColumnName="newsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="P_User">
+      <EntityTypeMapping TypeName="PeopleDBModel.P_User">
+        <MappingFragment StoreEntitySet="P_User">
+          <ScalarProperty Name="uId" ColumnName="uId" />
+          <ScalarProperty Name="uName" ColumnName="uName" />
+          <ScalarProperty Name="uPwd" ColumnName="uPwd" />
+          <ScalarProperty Name="uPhoto" ColumnName="uPhoto" />
+          <ScalarProperty Name="uAge" ColumnName="uAge" />
+          <ScalarProperty Name="uSex" ColumnName="uSex" />
+          <ScalarProperty Name="uMobile" ColumnName="uMobile" />
+          <ScalarProperty Name="uPhone" ColumnName="uPhone" />
+          <ScalarProperty Name="uProvince" ColumnName="uProvince" />
+          <ScalarProperty Name="uCity" ColumnName="uCity" />
+          <ScalarProperty Name="uZipCode" ColumnName="uZipCode" />
+          <ScalarProperty Name="uAddr" ColumnName="uAddr" />
+          <ScalarProperty Name="uLoginTime" ColumnName="uLoginTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_GetAlbumList">
+      <EntityTypeMapping TypeName="PeopleDBModel.V_GetAlbumList">
+        <MappingFragment StoreEntitySet="V_GetAlbumList">
+          <ScalarProperty Name="aId" ColumnName="aId" />
+          <ScalarProperty Name="aName" ColumnName="aName" />
+          <ScalarProperty Name="aPhoto" ColumnName="aPhoto" />
+          <ScalarProperty Name="aIntro" ColumnName="aIntro" />
+          <ScalarProperty Name="personId" ColumnName="personId" />
+          <ScalarProperty Name="aAddTime" ColumnName="aAddTime" />
+          <ScalarProperty Name="aClicks" ColumnName="aClicks" />
+          <ScalarProperty Name="cName" ColumnName="cName" />
+          <ScalarProperty Name="cEnName" ColumnName="cEnName" />
+          <ScalarProperty Name="cId" ColumnName="cId" />
+          <ScalarProperty Name="pCnName" ColumnName="pCnName" />
+          <ScalarProperty Name="pPenName" ColumnName="pPenName" />
+          <ScalarProperty Name="pEnName" ColumnName="pEnName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_GetNews">
+      <EntityTypeMapping TypeName="PeopleDBModel.v_GetNews">
+        <MappingFragment StoreEntitySet="v_GetNews">
+          <ScalarProperty Name="nId" ColumnName="nId" />
+          <ScalarProperty Name="nForm" ColumnName="nForm" />
+          <ScalarProperty Name="nFormurl" ColumnName="nFormurl" />
+          <ScalarProperty Name="uId" ColumnName="uId" />
+          <ScalarProperty Name="nAuthor" ColumnName="nAuthor" />
+          <ScalarProperty Name="nTime" ColumnName="nTime" />
+          <ScalarProperty Name="nTalks" ColumnName="nTalks" />
+          <ScalarProperty Name="nClicks" ColumnName="nClicks" />
+          <ScalarProperty Name="nTitle" ColumnName="nTitle" />
+          <ScalarProperty Name="nTitlepic" ColumnName="nTitlepic" />
+          <ScalarProperty Name="nTips" ColumnName="nTips" />
+          <ScalarProperty Name="nContent" ColumnName="nContent" />
+          <ScalarProperty Name="nTags" ColumnName="nTags" />
+          <ScalarProperty Name="nLinkurl" ColumnName="nLinkurl" />
+          <ScalarProperty Name="nIsPage" ColumnName="nIsPage" />
+          <ScalarProperty Name="nClass2" ColumnName="nClass2" />
+          <ScalarProperty Name="nStatus" ColumnName="nStatus" />
+          <ScalarProperty Name="nLevel" ColumnName="nLevel" />
+          <ScalarProperty Name="nIsRecommand" ColumnName="nIsRecommand" />
+          <ScalarProperty Name="nIsDel" ColumnName="nIsDel" />
+          <ScalarProperty Name="cName" ColumnName="cName" />
+          <ScalarProperty Name="cEnName" ColumnName="cEnName" />
+          <ScalarProperty Name="nClass1" ColumnName="nClass1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_GetPersonList">
+      <EntityTypeMapping TypeName="PeopleDBModel.v_GetPersonList">
+        <MappingFragment StoreEntitySet="v_GetPersonList">
+          <ScalarProperty Name="pId" ColumnName="pId" />
+          <ScalarProperty Name="pCnName" ColumnName="pCnName" />
+          <ScalarProperty Name="pEnName" ColumnName="pEnName" />
+          <ScalarProperty Name="pPenName" ColumnName="pPenName" />
+          <ScalarProperty Name="pSex" ColumnName="pSex" />
+          <ScalarProperty Name="pJob" ColumnName="pJob" />
+          <ScalarProperty Name="pNation" ColumnName="pNation" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="pAddTime" ColumnName="pAddTime" />
+          <ScalarProperty Name="cName" ColumnName="cName" />
+          <ScalarProperty Name="cEnName" ColumnName="cEnName" />
+          <ScalarProperty Name="cOrder" ColumnName="cOrder" />
+          <ScalarProperty Name="pTips" ColumnName="pTips" />
+          <ScalarProperty Name="pPhoto" ColumnName="pPhoto" />
+          <ScalarProperty Name="pClicks" ColumnName="pClicks" />
+          <ScalarProperty Name="pNationality" ColumnName="pNationality" />
+          <ScalarProperty Name="pBirthday" ColumnName="pBirthday" />
+          <ScalarProperty Name="pHeight" ColumnName="pHeight" />
+          <ScalarProperty Name="pWeight" ColumnName="pWeight" />
+          <ScalarProperty Name="pBWH" ColumnName="pBWH" />
+          <ScalarProperty Name="pUniversity" ColumnName="pUniversity" />
+          <ScalarProperty Name="pHomeProvince" ColumnName="pHomeProvince" />
+          <ScalarProperty Name="pHomeCity" ColumnName="pHomeCity" />
+          <ScalarProperty Name="cId" ColumnName="cId" />
+          <ScalarProperty Name="cParentId" ColumnName="cParentId" />
+          <ScalarProperty Name="cLevel" ColumnName="cLevel" />
+          <ScalarProperty Name="pHomeArea" ColumnName="pHomeArea" />
+          <ScalarProperty Name="pNowProvice" ColumnName="pNowProvice" />
+          <ScalarProperty Name="pNowCity" ColumnName="pNowCity" />
+          <ScalarProperty Name="pNowArea" ColumnName="pNowArea" />
+          <ScalarProperty Name="pNowPlace" ColumnName="pNowPlace" />
+          <ScalarProperty Name="pBloodType" ColumnName="pBloodType" />
+          <ScalarProperty Name="pSpeak" ColumnName="pSpeak" />
+          <ScalarProperty Name="pSinaBlog" ColumnName="pSinaBlog" />
+          <ScalarProperty Name="pTencentBlog" ColumnName="pTencentBlog" />
+          <ScalarProperty Name="pHomePage" ColumnName="pHomePage" />
+          <ScalarProperty Name="pIntroduce" ColumnName="pIntroduce" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_GetQuestionList">
+      <EntityTypeMapping TypeName="PeopleDBModel.V_GetQuestionList">
+        <MappingFragment StoreEntitySet="V_GetQuestionList">
+          <ScalarProperty Name="qId" ColumnName="qId" />
+          <ScalarProperty Name="qTitle" ColumnName="qTitle" />
+          <ScalarProperty Name="qAsker" ColumnName="qAsker" />
+          <ScalarProperty Name="qAddTime" ColumnName="qAddTime" />
+          <ScalarProperty Name="personId" ColumnName="personId" />
+          <ScalarProperty Name="qClicks" ColumnName="qClicks" />
+          <ScalarProperty Name="pCnName" ColumnName="pCnName" />
+          <ScalarProperty Name="pEnName" ColumnName="pEnName" />
+          <ScalarProperty Name="cName" ColumnName="cName" />
+          <ScalarProperty Name="cEnName" ColumnName="cEnName" />
+          <ScalarProperty Name="pSex" ColumnName="pSex" />
+          <ScalarProperty Name="pJob" ColumnName="pJob" />
+          <ScalarProperty Name="pNationality" ColumnName="pNationality" />
+          <ScalarProperty Name="pNation" ColumnName="pNation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="P_AddNews" FunctionName="PeopleDBModel.Store.P_AddNews" />
+    <FunctionImportMapping FunctionImportName="P_EditNews" FunctionName="PeopleDBModel.Store.P_EditNews" />
+    <FunctionImportMapping FunctionImportName="P_Paging" FunctionName="PeopleDBModel.Store.P_Paging" />
+    <FunctionImportMapping FunctionImportName="P_QueryBySql" FunctionName="PeopleDBModel.Store.P_QueryBySql" />
+  </EntityContainerMapping>
+</Mapping>

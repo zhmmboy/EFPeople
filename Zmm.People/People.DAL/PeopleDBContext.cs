@@ -18,7 +18,7 @@ namespace People.DAL
         /// <summary>
         /// 
         /// </summary>
-        public PeopleDBContext():base("DefaultConnection")
+        public PeopleDBContext():base("PeopleDBContext")
         {
 
         }

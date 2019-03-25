@@ -12,9 +12,6 @@ E:\MySpace\Zmm.People\People.DAL\bin\Debug\EntityFramework.SqlServer.xml
 E:\MySpace\Zmm.People\People.DAL\obj\Debug\People.DAL.csprojResolveAssemblyReference.cache
 E:\MySpace\Zmm.People\People.DAL\obj\Debug\People.DAL.dll
 E:\MySpace\Zmm.People\People.DAL\obj\Debug\People.DAL.pdb
-E:\MyGit\Zmm.People\People.DAL\obj\Debug\People.DAL.csprojResolveAssemblyReference.cache
-E:\MyGit\Zmm.People\People.DAL\obj\Debug\People.DAL.dll
-E:\MyGit\Zmm.People\People.DAL\obj\Debug\People.DAL.pdb
 E:\MyGit\Zmm.People\People.DAL\bin\Debug\People.DAL.dll.config
 E:\MyGit\Zmm.People\People.DAL\bin\Debug\People.DAL.dll
 E:\MyGit\Zmm.People\People.DAL\bin\Debug\People.DAL.pdb
@@ -26,3 +23,6 @@ E:\MyGit\Zmm.People\People.DAL\bin\Debug\People.IDAL.pdb
 E:\MyGit\Zmm.People\People.DAL\bin\Debug\People.Models.pdb
 E:\MyGit\Zmm.People\People.DAL\bin\Debug\EntityFramework.xml
 E:\MyGit\Zmm.People\People.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\MyGit\Zmm.People\People.DAL\obj\Debug\People.DAL.csprojResolveAssemblyReference.cache
+E:\MyGit\Zmm.People\People.DAL\obj\Debug\People.DAL.dll
+E:\MyGit\Zmm.People\People.DAL\obj\Debug\People.DAL.pdb

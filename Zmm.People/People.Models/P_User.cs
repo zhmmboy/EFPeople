@@ -22,30 +22,39 @@ namespace People.Models
         /// <summary>
         /// 主键
         /// </summary>
-        [Key]        
-        public System.Guid uId { get; set; }
+        [Key]
+        public Guid uId { get; set; }
 
         [Required(ErrorMessage = "用户名必填。")]
-        [StringLength(20,MinimumLength =6,ErrorMessage ="必须为 {1} 到 {0} 个字符。")]
-        [Display(Name ="用户名")]
+        [StringLength(20, MinimumLength = 6, ErrorMessage = "必须为 {1} 到 {0} 个字符。")]
+        [Display(Name = "用户名")]
         public string uName { get; set; }
 
-        [Required(ErrorMessage ="登录密码必填。")]
-        [StringLength(15,MinimumLength =6,ErrorMessage ="必须为 {1} 到 {0} 个字符。")]
-        [Display(Name ="登录密码")]
+        [Required(ErrorMessage = "登录密码必填。")]
+        [StringLength(15, MinimumLength = 6, ErrorMessage = "必须为 {1} 到 {0} 个字符。")]
+        [Display(Name = "登录密码")]
         [DataType(DataType.Password)]
         public string uPwd { get; set; }
 
-        [Display(Name ="用户头像")]
+        [Display(Name = "用户头像")]
         public string uPhoto { get; set; }
+        [Display(Name = "年龄")]
         public Nullable<int> uAge { get; set; }
+        [Display(Name = "性别")]
         public Nullable<bool> uSex { get; set; }
+        [Display(Name = "移动电话")]
         public string uMobile { get; set; }
+        [Display(Name = "固定电话")]
         public string uPhone { get; set; }
+        [Display(Name = "所在省份")]
         public string uProvince { get; set; }
+        [Display(Name = "所在城市")]
         public string uCity { get; set; }
+        [Display(Name = "邮编")]
         public string uZipCode { get; set; }
+        [Display(Name = "地址")]
         public string uAddr { get; set; }
+        [Display(Name = "最后登录地址")]
         public Nullable<System.DateTime> uLoginTime { get; set; }
     }
 }

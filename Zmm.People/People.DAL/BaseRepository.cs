@@ -73,7 +73,7 @@ namespace People.DAL
 
         public T GetSingle(Expression<Func<T, bool>> whereLambda)
         {
-            throw new NotImplementedException();
+            return dbContext.Set<T>().Where(whereLambda).FirstOrDefault();
         }
 
         public bool Update(T t)

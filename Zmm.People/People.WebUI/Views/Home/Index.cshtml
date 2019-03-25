@@ -1,0 +1,43 @@
+﻿@model IEnumerable<People.Models.P_User>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<style>
+    #show {
+        width: 100%;
+    }
+
+    #show div {
+        border:1px solid;
+        width: 12%;
+        height:50px;
+        float:left;
+    }
+</style>    
+
+<div id="show">
+    <div>@Html.DisplayNameFor(model => model.uId)</div>
+    <div>@Html.DisplayNameFor(model => model.uName)</div>
+    <div>@Html.DisplayNameFor(model => model.uMobile)</div>
+    <div>@Html.DisplayNameFor(model => model.uPhone)</div>
+    <div>@Html.DisplayNameFor(model => model.uLoginTime)</div>
+    <div>编辑</div>
+    <div>删除</div>
+</div>
+<div id="show">
+    @foreach (var u in Model)
+    {
+        <div>@u.uId</div>
+        <div>@u.uName</div>
+        <div>@u.uMobile</div>
+        <div>@u.uPhone</div>
+        <div>@u.uLoginTime</div>
+        <div>@Html.ActionLink("Edit", "Edit", new { Id = u.uId,uName=u.uName,pwd=u.uPwd })</div>
+        <div>@Html.ActionLink("Delete", "Delete", new { Id = u.uId })</div>
+    }
+</div>
+
+
+

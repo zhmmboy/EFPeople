@@ -1,4 +1,4 @@
-﻿@model People.Models.P_User
+﻿@model People.Models.WebModel.WebUser
 
 @{
     ViewBag.Title = "Add";
@@ -6,10 +6,10 @@
 
 <h2>Add</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>P_User</h4>
         <hr />
@@ -32,8 +32,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.uPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.uPhoto)
+            <div class="col-md-10 fileParent">
+                @Html.TextBoxFor(model => model.uPhoto, new { type = "file", @class = "file" })
                 @Html.ValidationMessageFor(model => model.uPhoto)
             </div>
         </div>
@@ -117,7 +117,34 @@
         </div>
     </div>
 }
+<script type="text/javascript" src="@Url.Content("~/scripts/ajaxfileupload.js")"></script>
+<script>
 
+    $(document).ready(function () {
+
+        $(".fileParent").on("change", ".file", function (data) {
+            
+            $.ajaxFileUpload({
+                type: 'post',
+                secureuri: false, //是否需要安全协议，一般设置为false
+                url: 'UploadFile',
+                fileElementId: "uPhoto",//<input type=file id=file name=file/>
+                dataType: "json",
+                data: {
+                    "Id": ""
+                },success: function (dd) {
+
+                }, error: function (status, responseText) {
+
+                }
+            });
+
+
+        })
+    });
+
+
+</script>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UploadFile</title>
+</head>
+<body>
+    <div>
+        这是我的一个上传文件的测试页面.
+        <form action="/Home/UploadFile" method="post" enctype="multipart/form-data">
+            <input type="file" name="filename" /><br />
+            <input type="submit" value="提交" />
+        </form>
+    </div>
+</body>
+</html>

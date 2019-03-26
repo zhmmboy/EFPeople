@@ -12,11 +12,11 @@ namespace People.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    /// <summary>
-    /// 
-    /// Created by:zmm 2019/03/22
-    /// 
-    /// </summary>
+    using System.Web;    /// <summary>
+                         /// 
+                         /// Created by:zmm 2019/03/22
+                         /// 
+                         /// </summary>
     public partial class P_User
     {
         /// <summary>
@@ -25,15 +25,15 @@ namespace People.Models
         [Key]
         public Guid uId { get; set; }
 
-        [Required(ErrorMessage = "用户名必填。")]
-        [StringLength(20, MinimumLength = 6, ErrorMessage = "必须为 {1} 到 {0} 个字符。")]
-        [Display(Name = "用户名")]
+        //[Required(ErrorMessage = "用户名必填。")]
+        //[StringLength(20, MinimumLength = 6, ErrorMessage = "必须为 {2} 到 {1} 个字符。")]
+        //[Display(Name = "用户名")]
         public string uName { get; set; }
 
-        [Required(ErrorMessage = "登录密码必填。")]
-        [StringLength(15, MinimumLength = 6, ErrorMessage = "必须为 {1} 到 {0} 个字符。")]
-        [Display(Name = "登录密码")]
-        [DataType(DataType.Password)]
+        //[Required(ErrorMessage = "登录密码必填。")]
+        //[StringLength(15, MinimumLength = 6, ErrorMessage = "必须为 {1} 到 {0} 个字符。")]
+        //[Display(Name = "登录密码")]
+        //[DataType(DataType.Password)]
         public string uPwd { get; set; }
 
         [Display(Name = "用户头像")]
@@ -41,10 +41,14 @@ namespace People.Models
         [Display(Name = "年龄")]
         public Nullable<int> uAge { get; set; }
         [Display(Name = "性别")]
+        [Required]
         public Nullable<bool> uSex { get; set; }
         [Display(Name = "移动电话")]
+        //[RegularExpression(@"^[1]+[3,5]+\d{9}", ErrorMessage = "移动电话号码错误.")]
+        //[Required(ErrorMessage = "{0}不能为空.")]
         public string uMobile { get; set; }
         [Display(Name = "固定电话")]
+        //[Required, DataType(DataType.PhoneNumber)]
         public string uPhone { get; set; }
         [Display(Name = "所在省份")]
         public string uProvince { get; set; }

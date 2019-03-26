@@ -77,6 +77,6 @@ namespace People.IDAL
         /// <param name="isAsc"></param>
         /// <param name="orderLambda"></param>
         /// <returns></returns>
-        IQueryable<T> GetPage<S>(int PageIndex, int pageSize,out int totalRecord, Expression<Func<T, bool>> whereLambda, bool isAsc, Expression<Func<T, S>> orderLambda);
+        IQueryable<T> GetPage<S>(int PageIndex, int pageSize, out int totalRecord, Expression<Func<T, bool>> whereLambda, bool isAsc, Expression<Func<T, S>> orderLambda);
     }
 }

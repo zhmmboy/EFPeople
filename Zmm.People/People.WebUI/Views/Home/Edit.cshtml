@@ -6,6 +6,16 @@
 <h2>Edit</h2>
 
 <div>
+
+    <script>
+
+        if("@ViewData["success"]"=="True")
+        {
+            alert("修改成功");
+        }
+
+        console.log("@ViewBag.flag aaa");
+    </script>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -14,7 +24,6 @@
 
         @Html.HiddenFor(model=>model.uId)
         @Html.LabelFor(model => model.uName, htmlAttributes: new { @class = "addInput" })<br />
-        @Html.ValidationMessageFor(model => model.uName)
         @Html.EditorFor(model => model.uName)<br />
         @Html.ValidationMessageFor(model => model.uName)
 

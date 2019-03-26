@@ -4,16 +4,18 @@
 }
 
 <h2>Index</h2>
+<a href="~/Home/add">Add</a>
 <style>
     #show {
-        width: 100%;
+        width: 1000px;
     }
 
     #show div {
         border:1px solid;
-        width: 12%;
+        width: 10%;
         height:50px;
         float:left;
+        overflow:hidden;
     }
 </style>    
 
@@ -35,9 +37,25 @@
         <div>@u.uPhone</div>
         <div>@u.uLoginTime</div>
         <div>@Html.ActionLink("Edit", "Edit", new { Id = u.uId,uName=u.uName,pwd=u.uPwd })</div>
-        <div>@Html.ActionLink("Delete", "Delete", new { Id = u.uId })</div>
+        <div onclick="deleteMsg('@(u.uId)')">删除</div>
     }
 </div>
+
+<script>
+
+    function deleteMsg(id)
+    {
+        $.ajax({
+            method:"post",
+            url: "/home/Index",
+            data: { uId: id },
+            success: function (data) {
+                console.log(data.message);
+            }
+        })
+    }
+
+</script>
 
 
 

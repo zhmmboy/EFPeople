@@ -11,8 +11,9 @@ namespace People.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class P_Class
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class P_Class:IValidatableObject
     {
         public System.Guid cId { get; set; }
         public string cName { get; set; }
@@ -20,5 +21,28 @@ namespace People.Models
         public string cParentId { get; set; }
         public Nullable<int> cOrder { get; set; }
         public Nullable<int> cLevel { get; set; }
+
+        /// <summary>
+        /// 实现验证接口
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            P_Class single = validationContext.ObjectInstance as P_Class;
+            
+            if(single.cName==null)
+            {
+                yield return new ValidationResult("'cName'必须填写", new string[] { "cName" });
+            }
+            if(single.cEnName==null)
+            {
+                yield break;
+            }
+            if(single.cEnName!="zmm")
+            {
+                yield return new ValidationResult("'cEnName'必须是zmm", new string[] { "cEnName" });
+            }
+        }
     }
 }

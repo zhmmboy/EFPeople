@@ -12,11 +12,14 @@ namespace People.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Web;    /// <summary>
-                         /// 
-                         /// Created by:zmm 2019/03/22
-                         /// 
-                         /// </summary>
+    using System.Web;
+    using System.Web.Mvc;
+    using ValidateHelper;
+    /// <summary>
+    /// 
+    /// Created by:zmm 2019/03/22
+    /// 
+    /// </summary>
     public partial class P_User
     {
         /// <summary>
@@ -28,19 +31,19 @@ namespace People.Models
         //[Required(ErrorMessage = "用户名必填。")]
         //[StringLength(20, MinimumLength = 6, ErrorMessage = "必须为 {2} 到 {1} 个字符。")]
         //[Display(Name = "用户名")]
+        //[Remote("ExistsUsername", "Home", AdditionalFields = "uProvince")]
         public string uName { get; set; }
-
         //[Required(ErrorMessage = "登录密码必填。")]
         //[StringLength(15, MinimumLength = 6, ErrorMessage = "必须为 {1} 到 {0} 个字符。")]
         //[Display(Name = "登录密码")]
         //[DataType(DataType.Password)]
         public string uPwd { get; set; }
-
         [Display(Name = "用户头像")]
         public string uPhoto { get; set; }
         [Display(Name = "年龄")]
         public Nullable<int> uAge { get; set; }
         [Display(Name = "性别")]
+        [Domain(new string[] { "M", "F", "T", "W" }, ErrorMessageResourceName = "Domain", ErrorMessageResourceType = typeof(Resources))]
         [Required]
         public Nullable<bool> uSex { get; set; }
         [Display(Name = "移动电话")]
@@ -55,6 +58,7 @@ namespace People.Models
         [Display(Name = "所在城市")]
         public string uCity { get; set; }
         [Display(Name = "邮编")]
+        //[Required(ErrorMessageResourceName ="Required",ErrorMessageResourceType =typeof(Resources))]
         public string uZipCode { get; set; }
         [Display(Name = "地址")]
         public string uAddr { get; set; }

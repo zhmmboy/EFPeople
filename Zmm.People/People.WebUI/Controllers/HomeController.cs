@@ -1,5 +1,6 @@
 ﻿using People.Models;
 using People.Models.WebModel;
+using People.WebUI.Filter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,6 @@ namespace People.WebUI.Controllers
     public class HomeController : Controller
     {
         BLL.UserBLL userBll = new BLL.UserBLL();
-        
         public ActionResult UploadFile()
         {
             var ff = System.Web.HttpContext.Current.Request.Files;
@@ -19,8 +19,18 @@ namespace People.WebUI.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 这是登录页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Login()
+        {
+            return View();
+        }
+
         public ActionResult Add()
         {
+            new Exception();
             return View();
         }
 
@@ -32,13 +42,33 @@ namespace People.WebUI.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Add(P_User model)
         {
+            //验证模型
+            //Validate(model);
+
             if (ModelState.IsValid)
             {
                 model.uId = Guid.NewGuid();
                 userBll.Add(model);
                 return RedirectToAction("/Index");
             }
-            return View();
+            return View(model);
+        }
+
+        /// <summary>
+        /// 手动验证模型
+        /// </summary>
+        /// <param name="model"></param>
+        private void Validate(P_User model)
+        {
+            if (model.uAddr == null || model.uAddr == string.Empty)
+            {
+                ModelState.AddModelError("Addr", "请输入收货地址.");
+            }
+            if (model.uAge == null || model.uAge > 100 || model.uAge <= 0)
+            {
+                ModelState.AddModelError("age", "年龄必须在0-100岁之间.");
+            }
+
         }
 
         [HttpPost]
@@ -89,6 +119,23 @@ namespace People.WebUI.Controllers
 
             return View();
             //return RedirectToAction("/Index");
+        }
+
+
+        /// <summary>
+        /// 验证该用户是否已经存在
+        /// </summary>
+        /// <param name="uName"></param>
+        /// <returns></returns>
+        public JsonResult ExistsUsername(string uProvince, string uName)
+        {
+            var single = userBll.GetSingleByName(uName);
+            if (single != null)
+                return Json("该用户名已经存在", JsonRequestBehavior.AllowGet);
+            else if (uProvince != "安徽省" || uProvince != "江苏省")
+                return Json("必须是安徽省或者江苏省人士.", JsonRequestBehavior.AllowGet);
+            else
+                return Json(true, JsonRequestBehavior.AllowGet);
         }
     }
 }

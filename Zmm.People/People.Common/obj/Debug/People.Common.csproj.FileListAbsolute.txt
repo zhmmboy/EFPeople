@@ -5,6 +5,5 @@ E:\MySpace\Zmm.People\People.Common\obj\Debug\People.Common.dll
 E:\MySpace\Zmm.People\People.Common\obj\Debug\People.Common.pdb
 E:\MyGit\Zmm.People\People.Common\bin\Debug\People.Common.dll
 E:\MyGit\Zmm.People\People.Common\bin\Debug\People.Common.pdb
-E:\MyGit\Zmm.People\People.Common\obj\Debug\People.Common.csprojResolveAssemblyReference.cache
 E:\MyGit\Zmm.People\People.Common\obj\Debug\People.Common.dll
 E:\MyGit\Zmm.People\People.Common\obj\Debug\People.Common.pdb

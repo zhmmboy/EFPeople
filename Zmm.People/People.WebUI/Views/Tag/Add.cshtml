@@ -1,0 +1,91 @@
+﻿@model People.Models.P_Tags
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>P_Tags</h4>
+            <hr />
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                @Html.LabelFor(model => model.tId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tId)
+                    @Html.ValidationMessageFor(model => model.tId)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.tName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tName)
+                    @Html.ValidationMessageFor(model => model.tName)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.tAddTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tAddTime)
+                    @Html.ValidationMessageFor(model => model.tAddTime)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.tIsValid, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tIsValid)
+                    @Html.ValidationMessageFor(model => model.tIsValid)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.tClicks, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tClicks)
+                    @Html.ValidationMessageFor(model => model.tClicks)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.classId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.classId)
+                    @Html.ValidationMessageFor(model => model.classId)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.newsId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.newsId)
+                    @Html.ValidationMessageFor(model => model.newsId)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

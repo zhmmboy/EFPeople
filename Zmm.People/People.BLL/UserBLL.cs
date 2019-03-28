@@ -34,7 +34,7 @@ namespace People.BLL
 
         public P_User GetSingleByName(string userName)
         {
-            return CurrentRepositoty.GetSingle(u => u.uPhone == userName);
+            return CurrentRepositoty.GetSingle(u => u.uName == userName);
         }
     }
 }

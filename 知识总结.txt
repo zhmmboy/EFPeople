@@ -1,0 +1,5 @@
+一.MVC相关总结
+1.mvc常用的模型验证方式
+1.1 模型标签验证
+1.2 ValidationAttribute验证法，自定义验证子类，继承：ValidationAttribute基类，声明构造函数，传入需要对比验证的参数值，然后在需要验证的字段上面加入标签（标签名字为：自定义子类名称）
+1.3 直接让数据模型实现接口：IValidatableObject，然后实现：Validate方法，在该方法内部做数据验证

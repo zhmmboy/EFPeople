@@ -102,5 +102,7 @@ E:\MyGit\Zmm.People\People.WebUI\bin\People.IDAL.pdb
 E:\MyGit\Zmm.People\People.WebUI\bin\People.DAL.pdb
 E:\MyGit\Zmm.People\People.WebUI\bin\EntityFramework.xml
 E:\MyGit\Zmm.People\People.WebUI\obj\Debug\People.WebUI.csprojResolveAssemblyReference.cache
+E:\MyGit\Zmm.People\People.WebUI\obj\Debug\People.WebUI.Properties.Resources.resources
+E:\MyGit\Zmm.People\People.WebUI\obj\Debug\People.WebUI.csproj.GenerateResource.Cache
 E:\MyGit\Zmm.People\People.WebUI\obj\Debug\People.WebUI.dll
 E:\MyGit\Zmm.People\People.WebUI\obj\Debug\People.WebUI.pdb

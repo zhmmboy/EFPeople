@@ -11,8 +11,10 @@ namespace People.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class P_Tags
+    using System.ComponentModel;
+
+
+    public partial class P_Tags : IDataErrorInfo
     {
         public System.Guid tId { get; set; }
         public string tName { get; set; }
@@ -21,5 +23,40 @@ namespace People.Models
         public Nullable<int> tClicks { get; set; }
         public Nullable<System.Guid> classId { get; set; }
         public Nullable<System.Guid> newsId { get; set; }
+
+        public string Error
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case "tName":
+                        {
+                            if (string.IsNullOrEmpty(this.tName))
+                            {
+                                return "'名称标签必须填写.'";
+                            }
+                            return null;
+                        };
+                    case "tAddTime":
+                        {
+                            if (string.IsNullOrEmpty(this.tName))
+                            {
+                                return "添加时间必须填写.";
+                            }
+                            return null;
+                        }
+                    default: return null;
+                }
+            }
+        }
     }
 }

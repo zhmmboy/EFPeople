@@ -1,10 +1,6 @@
 ﻿using People.Models;
-using People.Models.WebModel;
-using People.WebUI.Filter;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace People.WebUI.Controllers
@@ -25,12 +21,16 @@ namespace People.WebUI.Controllers
         /// <returns></returns>
         public ActionResult Login()
         {
+            //模拟登录成功后
+            HttpContext.Session["userId"] = new Random().Next(100, 1000);
+
             return View();
         }
 
         public ActionResult Add()
         {
             new Exception();
+            ViewBag.userId = Session["userId"];
             return View();
         }
 
@@ -91,7 +91,6 @@ namespace People.WebUI.Controllers
         {
             int total = 0;
             var lst = userBll.GetList(1, 10, out total, 1).ToList();
-
             return View(lst);
         }
 

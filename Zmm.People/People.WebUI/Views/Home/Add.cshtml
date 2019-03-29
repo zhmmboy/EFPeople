@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    <div>当前登录用户Id为：@ViewBag.userId </div>    
     <div class="form-horizontal">
         <h4>P_User</h4>
         <hr />

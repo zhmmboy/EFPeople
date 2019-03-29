@@ -17,6 +17,5 @@ E:\MyGit\Zmm.People\People.CreateModelsHelper\bin\Debug\EntityFramework.xml
 E:\MyGit\Zmm.People\People.CreateModelsHelper\bin\Debug\EntityFramework.SqlServer.xml
 E:\MyGit\Zmm.People\People.CreateModelsHelper\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\MyGit\Zmm.People\People.CreateModelsHelper\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
-E:\MyGit\Zmm.People\People.CreateModelsHelper\obj\Debug\People.CreateModelsHelper.csprojResolveAssemblyReference.cache
 E:\MyGit\Zmm.People\People.CreateModelsHelper\obj\Debug\People.CreateModelsHelper.dll
 E:\MyGit\Zmm.People\People.CreateModelsHelper\obj\Debug\People.CreateModelsHelper.pdb
